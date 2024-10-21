@@ -87,7 +87,7 @@ function Nav() {
                   </button>
                   {/* searchBar */}
                   <input
-                     className="w-[90%] md:w-[55%] px-6 py-3 appearance-none focus:outline-none border border-gray-300"
+                     className="w-[90%] md:w-[55%] px-6 py-3 text-stone-600 appearance-none focus:outline-none border border-gray-300"
                      placeholder="I'm searching for ..."
                      type="text"
                   />
@@ -109,7 +109,7 @@ function Nav() {
                            isMenuOpen
                               ? "h-[269px] px-3 border-[1px] border-gray-300"
                               : "h-0 p-0 border-none overflow-hidden"
-                        }  absolute top-[50px] w-[270px] bg-white shadow-sm transition-all duration-500 child:border-b child:border-gray-300 child:cursor-pointer z-20`}
+                        }  absolute top-[50px] w-[270px] bg-white shadow-sm transition-all duration-500 child:font-medium child:border-b child:border-gray-300 child:cursor-pointer z-20`}
                      >
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                            <span className="inline-block p-2 ">HOME</span>
@@ -144,7 +144,7 @@ function Nav() {
                                     isMenuOpen && isAccountSubOpen
                                        ? "h-[135px] px-3 border-[1px] border-gray-300"
                                        : "h-0 p-0 border-none"
-                                 }  absolute top-[50px] w-[220px] bg-white shadow-sm text-start overflow-hidden transition-all duration-500 child:border-b child:border-gray-300 child:cursor-pointer z-30`}
+                                 }  absolute top-[50px] w-[220px] bg-white shadow-sm text-start overflow-hidden transition-all duration-500 child:font-normal child:border-b child:border-gray-300 child:cursor-pointer z-30`}
                               >
                                  <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                                     <span className="inline-block p-2">
@@ -191,7 +191,7 @@ function Nav() {
          <div className="hidden md:block bg-indigo-700 text-white h-[48px] w-full ">
             <div className="container flex items-center lg:justify-between">
                {/* menu */}
-               <ul className="flex items-center child:cursor-pointer child:px-5 child:py-3">
+               <ul className="flex items-center child:cursor-pointer child:px-5 child:py-3 child:transition-colors child:font-medium">
                   <li className="hover:bg-indigo-800">HOME</li>
                   <li className="hover:bg-indigo-800">SHOP</li>
                   <li className="hover:bg-indigo-800">BLOG</li>
@@ -201,7 +201,7 @@ function Nav() {
                         <use href="#chevron-down"></use>
                      </svg>
                      {/* account submenu */}
-                     <ul className="group-hover:h-[134px] group-hover:px-3 group-hover:border-[1px] group-hover:border-gray-300 h-0 p-0 border-none overflow-hidden absolute top-[50px] left-0 w-[220px] bg-white shadow-sm transition-all duration-500 child:border-b child:border-gray-300 child:cursor-pointer">
+                     <ul className="group-hover:h-[134px] group-hover:px-3 group-hover:border-[1px] group-hover:border-gray-300 h-0 p-0 border-none overflow-hidden absolute top-[50px] left-0 w-[220px] bg-white shadow-sm transition-all duration-500 child:font-normal child:border-b child:border-gray-300 child:cursor-pointer">
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                            <span className="inline-block p-2">My Account</span>
                         </li>
@@ -217,14 +217,14 @@ function Nav() {
                   <li className="hover:bg-indigo-800">CONTACT</li>
                </ul>
                {/* settings */}
-               <div className="hidden lg:flex items-center gap-x-0.5">
+               <div className="hidden lg:flex items-center gap-x-0.5 child:font-medium">
                   {/* language */}
-                  <div className="group relative flex gap-x-1 items-center p-3 cursor-pointer hover:bg-indigo-800">
+                  <div className="group relative flex gap-x-1 items-center p-3 cursor-pointer hover:bg-indigo-800 transition-colors">
                      English
                      <svg className="size-4">
                         <use href="#chevron-down"></use>
                      </svg>
-                     <ul className="absolute top-[48px] right-0 group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500">
+                     <ul className="absolute top-[48px] right-0 group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal">
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
@@ -260,12 +260,12 @@ function Nav() {
                   {/* vertical line */}
                   <span className="inline-block h-6 w-px bg-white"></span>
                   {/* currency */}
-                  <div className="group relative flex gap-x-1 items-center p-3 cursor-pointer hover:bg-indigo-800">
+                  <div className="group relative flex gap-x-1 items-center p-3 cursor-pointer hover:bg-indigo-800 transition-colors">
                      USD
                      <svg className="size-4 ">
                         <use href="#chevron-down"></use>
                      </svg>
-                     <ul className="absolute top-[48px] right-0 group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500">
+                     <ul className="absolute top-[48px] right-0 group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal">
                         <li className="flex items-center justify-center gap-x-3 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span>$</span>
                            USD
