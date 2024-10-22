@@ -92,7 +92,7 @@ function Nav() {
                      type="text"
                   />
                   {/* search icon */}
-                  <svg className="size-[50px] p-3  text-indigo-700 border border-gray-300">
+                  <svg className="size-[50px] p-3  text-indigo-700 border border-gray-300 cursor-pointer hover:text-white hover:bg-indigo-700 hover:border-indigo-700">
                      <use href="#search"></use>
                   </svg>
                </div>
