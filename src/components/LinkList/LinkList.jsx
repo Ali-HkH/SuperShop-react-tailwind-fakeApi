@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function LinkList({ title, links }) {
    return (
@@ -10,12 +11,11 @@ function LinkList({ title, links }) {
                   <svg className="size-4 text-indigo-700">
                      <use href="#stop-circle"></use>
                   </svg>
-                  <a
-                     href={link.href}
-                     className="text-stone-600 font-medium hover:text-indigo-700 transition-colors"
-                  >
-                     {link.name}
-                  </a>
+                  <Link to={link.href}>
+                     <span className="text-stone-600 font-medium hover:text-indigo-700 transition-colors">
+                        {link.name}
+                     </span>
+                  </Link>
                </li>
             ))}
          </ul>

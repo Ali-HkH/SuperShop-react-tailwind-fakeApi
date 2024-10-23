@@ -24,9 +24,9 @@ function Footer() {
                <LinkList
                   title="ALOSHOP"
                   links={[
-                     { name: "Contact Us", href: "#" },
-                     { name: "About Us", href: "#" },
-                     { name: "Blog", href: "#" },
+                     { name: "Contact Us", href: "/Contact" },
+                     { name: "About Us", href: "/About" },
+                     { name: "Blog", href: "/Blog" },
                      { name: "Specials", href: "#" },
                      { name: "New Products", href: "#" },
                      { name: "Top Sellers", href: "#" },

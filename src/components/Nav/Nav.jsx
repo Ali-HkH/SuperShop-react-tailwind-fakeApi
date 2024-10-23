@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Nav() {
@@ -112,14 +113,21 @@ function Nav() {
                         }  absolute top-[50px] w-[270px] bg-white shadow-sm transition-all duration-500 child:font-medium child:border-b child:border-gray-300 child:cursor-pointer z-20`}
                      >
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <span className="inline-block p-2 ">HOME</span>
+                           <Link to="/">
+                              <span className="inline-block p-2 ">HOME</span>
+                           </Link>
                         </li>
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <span className="inline-block p-2 ">SHOP</span>
+                           <Link to="/Shop">
+                              <span className="inline-block p-2 ">SHOP</span>
+                           </Link>
                         </li>
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <span className="inline-block p-2">BLOG</span>
+                           <Link to="/Blog">
+                              <span className="inline-block p-2 ">BLOG</span>
+                           </Link>
                         </li>
+                        {/* account submenu */}
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                            <button
                               className="w-full flex justify-between items-center relative"
@@ -147,9 +155,11 @@ function Nav() {
                                  }  absolute top-[50px] w-[220px] bg-white shadow-sm text-start overflow-hidden transition-all duration-500 child:font-normal child:border-b child:border-gray-300 child:cursor-pointer z-30`}
                               >
                                  <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                                    <span className="inline-block p-2">
-                                       My Account
-                                    </span>
+                                    <Link to="Login">
+                                       <span className="inline-block p-2">
+                                          My Account
+                                       </span>
+                                    </Link>
                                  </li>
                                  <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                                     <span className="inline-block p-2">
@@ -165,10 +175,14 @@ function Nav() {
                            </button>
                         </li>
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <span className="inline-block p-2">ABOUT</span>
+                           <Link to="/About">
+                              <span className="inline-block p-2 ">ABOUT</span>
+                           </Link>
                         </li>
                         <li className="border-none text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <span className="inline-block p-2">CONTACT</span>
+                           <Link to="/Contact">
+                              <span className="inline-block p-2 ">CONTACT</span>
+                           </Link>
                         </li>
                      </ul>
                   </div>
@@ -178,10 +192,12 @@ function Nav() {
                         <use href="#shopping-cart"></use>
                      </svg>
                      <div className="px-4 border border-gray-300 py-[11px]">
-                        <span className="text-stone-600 md:hidden lg:inline-block">
-                           0 ITEM(S) -{" "}
-                        </span>
-                        <span className="text-indigo-700">$0.00</span>
+                        <Link to="Cart">
+                           <span className="text-stone-600 md:hidden lg:inline-block">
+                              0 ITEM(S) -{" "}
+                           </span>
+                           <span className="text-indigo-700">$0.00</span>
+                        </Link>
                      </div>
                   </div>
                </div>
@@ -192,9 +208,15 @@ function Nav() {
             <div className="container flex items-center lg:justify-between">
                {/* menu */}
                <ul className="flex items-center child:cursor-pointer child:px-5 child:py-3 child:transition-colors child:font-medium">
-                  <li className="hover:bg-indigo-800">HOME</li>
-                  <li className="hover:bg-indigo-800">SHOP</li>
-                  <li className="hover:bg-indigo-800">BLOG</li>
+                  <li className="hover:bg-indigo-800">
+                     <Link to="/">HOME</Link>
+                  </li>
+                  <li className="hover:bg-indigo-800">
+                     <Link to="/">SHOP</Link>
+                  </li>
+                  <li className="hover:bg-indigo-800">
+                     <Link to="/Blog">BLOG</Link>
+                  </li>
                   <li className="group relative hover:bg-indigo-800 flex items-center gap-x-1">
                      ACCOUNT
                      <svg className="size-4 ">
@@ -203,7 +225,11 @@ function Nav() {
                      {/* account submenu */}
                      <ul className="group-hover:h-[134px] group-hover:px-3 group-hover:border-[1px] group-hover:border-gray-300 h-0 p-0 border-none overflow-hidden absolute top-[50px] left-0 w-[220px] bg-white shadow-sm transition-all duration-500 child:font-normal child:border-b child:border-gray-300 child:cursor-pointer">
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <span className="inline-block p-2">My Account</span>
+                           <Link to="/Login">
+                              <span className="inline-block p-2">
+                                 My Account
+                              </span>
+                           </Link>
                         </li>
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                            <span className="inline-block p-2">Wishlist</span>
@@ -213,8 +239,12 @@ function Nav() {
                         </li>
                      </ul>
                   </li>
-                  <li className="hover:bg-indigo-800">ABOUT</li>
-                  <li className="hover:bg-indigo-800">CONTACT</li>
+                  <li className="hover:bg-indigo-800">
+                     <Link to="/About">ABOUT</Link>
+                  </li>
+                  <li className="hover:bg-indigo-800">
+                     <Link to="/Contact">CONTACT</Link>
+                  </li>
                </ul>
                {/* settings */}
                <div className="hidden lg:flex items-center gap-x-0.5 child:font-medium">
