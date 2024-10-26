@@ -16,6 +16,13 @@ function Nav() {
       console.log(allCategories);
    }, []);
 
+   const mobileMenuHandler = () => {
+      setIsMenuOpen(!isMenuOpen);
+      if (isAccountSubOpen === true) {
+         setIsAccountSubOpen(false);
+      }
+   };
+
    return (
       <div>
          {/* top nav */}
@@ -61,8 +68,9 @@ function Nav() {
                </div>
                {/* category - searchBar */}
                <div className="md:ml-8 flex items-center w-full md:w-[55%] 2xl:w-[60%]">
-                  {/* category button*/}
-                  <button
+                  {/* category */}
+                  <div
+                     role="button"
                      onClick={() => setIsCategoryOpen(!isCategoryOpen)}
                      className="relative"
                   >
@@ -85,7 +93,7 @@ function Nav() {
                            </li>
                         ))}
                      </ul>
-                  </button>
+                  </div>
                   {/* searchBar */}
                   <input
                      className="w-[90%] md:w-[55%] px-6 py-3 text-stone-600 appearance-none focus:outline-none border border-gray-300"
@@ -97,10 +105,11 @@ function Nav() {
                      <use href="#search"></use>
                   </svg>
                </div>
-               <div className="w-full md:w-auto flex justify-between">
+               {/* mobile nav & cart */}
+               <div className="w-full md:w-auto flex justify-between mb-6 md:mb-0">
                   {/* mobile nav menu */}
                   <div className="relative md:hidden">
-                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                     <button onClick={mobileMenuHandler}>
                         <svg className="size-12 p-3 text-white bg-indigo-700">
                            <use href="#bars-3"></use>
                         </svg>
@@ -109,8 +118,12 @@ function Nav() {
                         className={`${
                            isMenuOpen
                               ? "h-[269px] px-3 border-[1px] border-gray-300"
-                              : "h-0 p-0 border-none overflow-hidden"
-                        }  absolute top-[50px] w-[270px] bg-white shadow-sm transition-all duration-500 child:font-medium child:border-b child:border-gray-300 child:cursor-pointer z-20`}
+                              : "h-0 p-0 border-none "
+                        } ${
+                           isAccountSubOpen
+                              ? "overflow-visible"
+                              : "overflow-hidden"
+                        }  absolute top-[50px] w-[270px] bg-white shadow-sm transition-all duration-500 child:font-medium child:border-b child:border-gray-300 child:cursor-pointer z-20 overflow-hidden`}
                      >
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                            <Link to="/">
@@ -223,7 +236,7 @@ function Nav() {
                         <use href="#chevron-down"></use>
                      </svg>
                      {/* account submenu */}
-                     <ul className="group-hover:h-[134px] group-hover:px-3 group-hover:border-[1px] group-hover:border-gray-300 h-0 p-0 border-none overflow-hidden absolute top-[50px] left-0 w-[220px] bg-white shadow-sm transition-all duration-500 child:font-normal child:border-b child:border-gray-300 child:cursor-pointer">
+                     <ul className="group-hover:h-[134px] group-hover:px-3 group-hover:border-[1px] group-hover:border-gray-300 h-0 p-0 border-none overflow-hidden absolute top-[50px] left-0 w-[220px] bg-white shadow-sm transition-all duration-500 child:font-normal child:border-b child:border-gray-300 child:cursor-pointer z-20">
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
                            <Link to="/Login">
                               <span className="inline-block p-2">
@@ -254,7 +267,7 @@ function Nav() {
                      <svg className="size-4">
                         <use href="#chevron-down"></use>
                      </svg>
-                     <ul className="absolute top-[48px] right-0 group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal">
+                     <ul className="absolute top-[48px] right-0 bg-white group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal z-20">
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
@@ -295,7 +308,7 @@ function Nav() {
                      <svg className="size-4 ">
                         <use href="#chevron-down"></use>
                      </svg>
-                     <ul className="absolute top-[48px] right-0 group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal">
+                     <ul className="absolute top-[48px] right-0 bg-white group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal z-20">
                         <li className="flex items-center justify-center gap-x-3 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span>$</span>
                            USD

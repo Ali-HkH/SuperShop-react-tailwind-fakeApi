@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-   body {
-   }
 }
 @layer components {
    .container {
       @apply max-w-[95%] 2xl:max-w-[90%] px-4;
+   }
+   .sale-hero {
+      background-image: url("/public/images/saleHero.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: -150px;
+      background-attachment: fixed;
    }
 }
 @layer utilities {
