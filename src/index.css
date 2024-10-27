@@ -6,7 +6,7 @@
 }
 @layer components {
    .container {
-      @apply max-w-[95%] 2xl:max-w-[90%] px-4;
+      @apply max-w-[95%] px-5 2xl:max-w-[90%]  2xl:px-24;
    }
    .sale-hero {
       background-image: url("/public/images/saleHero.jpg");
