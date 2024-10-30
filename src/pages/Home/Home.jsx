@@ -76,17 +76,20 @@ function Home() {
                </div>
             </div>
          </div>
-         {/* flex Gallery */}
+         {/* Gallery Newest */}
          <div className="py-8 md:py-12">
             <SectionHeading title="NEWEST ELECTRONICS" />
             <div className="container flex items-center justify-center flex-col gap-y-10 md:flex-row gap-x-10">
+               {/* Gallery item */}
                <div className="relative group overflow-hidden cursor-pointer">
                   <img
                      src="./images/macPC.jpg"
                      alt="electronics"
                      className="w-full h-full group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
                   />
+                  {/* overlay */}
                   <div className="w-full h-full absolute top-0 right-0 bg-black/35 group-hover:h-0 group-hover:w-0 transition-all duration-500"></div>
+                  {/* content */}
                   <div className="absolute left-14 top-20 md:left-8 md:top-14 lg:left-14 lg:top-20">
                      <h1 className="text-5xl md:text-2xl lg:text-5xl text-stone-800 font-bold">
                         MACBOOK PC
@@ -96,13 +99,16 @@ function Home() {
                      </p>
                   </div>
                </div>
+               {/* Gallery item */}
                <div className="relative group overflow-hidden cursor-pointer">
                   <img
                      src="./images/galaxynote7.jpg"
                      alt="electronics"
                      className="w-full h-full group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
                   />
+                  {/* overlay */}
                   <div className="w-full h-full absolute top-0 right-0 bg-black/35 group-hover:h-0 group-hover:w-0 transition-all duration-500"></div>
+                  {/* content */}
                   <div className="absolute left-14 bottom-20 md:left-8 md:bottom-14 lg:left-14 lg:bottom-20">
                      <h1 className="text-5xl md:text-2xl lg:text-5xl text-stone-800 font-bold">
                         GALAXY NOTE7

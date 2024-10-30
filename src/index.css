@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+   html {
+      scroll-behavior: smooth;
+   }
 }
 @layer components {
    .container {
@@ -14,6 +17,17 @@
       background-size: cover;
       background-position: -150px;
       background-attachment: fixed;
+   }
+   .about-nav {
+      @apply relative md:text-lg text-stone-800 hover:text-indigo-700;
+   }
+   .about-nav::before {
+      content: "";
+      @apply block absolute -top-3.5 left-0 w-0 h-[2px] bg-indigo-700 hover:w-full transition-all duration-300;
+   }
+   .advantage-item::after {
+      content: "";
+      @apply hidden md:block absolute top-[30%] -right-[25%] w-[40%] h-[2px] bg-stone-600 last:hidden;
    }
 }
 @layer utilities {
