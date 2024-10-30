@@ -1,14 +1,13 @@
 import React from "react";
 import SuperiorBox from "../SuperiorBox/SuperiorBox";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 function Superior() {
    return (
-      <div className="bg-indigo-700 py-6">
+      <div className="bg-indigo-700 py-6 mt-16">
          <div className="container">
             <Swiper
                breakpoints={{

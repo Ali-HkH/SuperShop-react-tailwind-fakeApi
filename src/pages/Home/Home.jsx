@@ -2,6 +2,7 @@ import React from "react";
 import OptionBox from "../../components/OptionBox/OptionBox";
 import GalleryBox from "../../components/GalleryBox/GalleryBox";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
+import Brands from "../../components/Brands/Brands";
 
 function Home() {
    return (
@@ -40,7 +41,7 @@ function Home() {
             </div>
          </div>
          {/* Grid Gallery */}
-         <div className="py-14 md:py-20">
+         <div className="py-8 md:py-12">
             <SectionHeading title="TRENDING PRODUCTS" />
             <div className="container h-auto md:h-[95%] lg:h-[110vh] grid grid-cols-1 grid-rows-4 xs:grid-cols-2 xs:grid-rows-3 md:grid-cols-3 gap-5 lg:gap-8 child:max-h-80 xs:child:max-h-max">
                <div className="group relative col-span-1 row-span-1 xs:row-span-2 bg-blue-400">
@@ -75,6 +76,46 @@ function Home() {
                </div>
             </div>
          </div>
+         {/* flex Gallery */}
+         <div className="py-8 md:py-12">
+            <SectionHeading title="NEWEST ELECTRONICS" />
+            <div className="container flex items-center justify-center flex-col gap-y-10 md:flex-row gap-x-10">
+               <div className="relative group overflow-hidden cursor-pointer">
+                  <img
+                     src="./images/macPC.jpg"
+                     alt="electronics"
+                     className="w-full h-full group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
+                  />
+                  <div className="w-full h-full absolute top-0 right-0 bg-black/35 group-hover:h-0 group-hover:w-0 transition-all duration-500"></div>
+                  <div className="absolute left-14 top-20 md:left-8 md:top-14 lg:left-14 lg:top-20">
+                     <h1 className="text-5xl md:text-2xl lg:text-5xl text-stone-800 font-bold">
+                        MACBOOK PC
+                     </h1>
+                     <p className="text-3xl md:text-lg lg:text-3xl font-bold text-stone-900">
+                        FROM: <span className="text-amber-300">590.00$</span>
+                     </p>
+                  </div>
+               </div>
+               <div className="relative group overflow-hidden cursor-pointer">
+                  <img
+                     src="./images/galaxynote7.jpg"
+                     alt="electronics"
+                     className="w-full h-full group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
+                  />
+                  <div className="w-full h-full absolute top-0 right-0 bg-black/35 group-hover:h-0 group-hover:w-0 transition-all duration-500"></div>
+                  <div className="absolute left-14 bottom-20 md:left-8 md:bottom-14 lg:left-14 lg:bottom-20">
+                     <h1 className="text-5xl md:text-2xl lg:text-5xl text-stone-800 font-bold">
+                        GALAXY NOTE7
+                     </h1>
+                     <p className="text-3xl md:text-lg lg:text-3xl font-bold text-stone-900">
+                        FROM: <span className="text-amber-300">870.00$</span>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {/* Brands */}
+         <Brands />
       </div>
    );
 }

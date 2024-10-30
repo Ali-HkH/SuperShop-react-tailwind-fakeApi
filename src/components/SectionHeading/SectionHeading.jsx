@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function SectionHeading({ title }) {
    return (
-      <div className="mb-8 container bg-stone-50 border border-gray-300 py-4 px-5 flex items-center justify-between">
+      <div className="mb-12 container bg-stone-50 border border-gray-300/30 py-4 px-5 flex items-center justify-between">
          <h1 className="font-bold text-xl text-indigo-700">{title}</h1>
          <Link
             to="#"
