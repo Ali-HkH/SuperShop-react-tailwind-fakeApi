@@ -1,5 +1,6 @@
 import React from "react";
 import AdvantageBox from "../../components/AdvantageBox/AdvantageBox";
+import ReviewBox from "../../components/ReviewBox/ReviewBox";
 
 function About() {
    return (
@@ -44,7 +45,77 @@ function About() {
             </p>
          </div>
          {/* protection */}
-         <div className="mt-20"></div>
+         <div
+            id="protect"
+            className="mt-20 w-full flex flex-col items-start md:items-center md:flex-row md:justify-between"
+         >
+            <div className="w-full md:w-[50%]">
+               <h1 className="mb-10 text-[22px] md:text-lg lg:text-[22px] font-bold text-stone-800">
+                  TO GET FULL PROTECTION
+               </h1>
+               <ul className="flex flex-col items-start gap-y-2">
+                  <li className="flex items-center gap-x-8">
+                     <span className="px-7 py-5 text-lg lg:text-xl font-bold bg-indigo-700 text-white rounded-full">
+                        1
+                     </span>
+                     <p className="text-stone-600 lg:text-lg">
+                        CONFIRM your order online with a Trade Assurance
+                        supplier
+                     </p>
+                  </li>
+                  <li className="ml-8 w-[2px] h-14 bg-indigo-700/50"></li>
+                  <li className="flex items-center gap-x-8">
+                     <span className="px-7 py-5 text-lg lg:text-xl font-bold bg-indigo-700 text-white rounded-full">
+                        2
+                     </span>
+                     <p className="text-stone-600 lg:text-lg">
+                        PAY to the supplier’s CITIBANK account designated by
+                        Aloshop with credit card or bank transfer
+                     </p>
+                  </li>
+               </ul>
+               <a
+                  href="#"
+                  className="inline-block mt-7 pl-7 text-indigo-500 hover:text-indigo-700"
+               >
+                  View New User Guide
+               </a>
+            </div>
+            <div className="w-full md:w-[40%]">
+               <img
+                  src="./images/user-guide.jpg"
+                  alt="user-guide"
+                  className="w-full"
+               />
+            </div>
+         </div>
+         {/* reviews */}
+         <div
+            id="reviews"
+            className="mt-20 pt-20 pb-10 border-t-2 border-t-gray-300/50"
+         >
+            <h1 className="mb-9 text-[22px] md:text-lg lg:text-[22px] font-bold text-stone-800">
+               CUSTOMER REVIEWS
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+               <ReviewBox
+                  img="/images/review/review-1.jpg"
+                  name="Stenve Johnson"
+               />
+               <ReviewBox
+                  img="/images/review/review-2.jpg"
+                  name="Charlie McGlynn"
+               />
+               <ReviewBox
+                  img="/images/review/review-3.jpg"
+                  name="Madison Knight"
+               />
+               <ReviewBox
+                  img="/images/review/review-4.jpg"
+                  name="nikole brake"
+               />
+            </div>
+         </div>
       </div>
    );
 }

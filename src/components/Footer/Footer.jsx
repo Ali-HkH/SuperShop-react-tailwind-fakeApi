@@ -18,7 +18,6 @@ function Footer() {
                      { name: "Shipping", href: "#" },
                      { name: "Cancellation & Returns", href: "#" },
                      { name: "FAQ", href: "#" },
-                     { name: "Report Infringement", href: "#" },
                   ]}
                />
                <LinkList
@@ -27,7 +26,6 @@ function Footer() {
                      { name: "Contact Us", href: "/Contact" },
                      { name: "About Us", href: "/About" },
                      { name: "Blog", href: "/Blog" },
-                     { name: "Specials", href: "#" },
                      { name: "New Products", href: "#" },
                      { name: "Top Sellers", href: "#" },
                   ]}
