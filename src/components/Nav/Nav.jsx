@@ -9,11 +9,15 @@ function Nav() {
    const [isAccountSubOpen, setIsAccountSubOpen] = useState(false);
 
    useEffect(() => {
-      axios.get("https://fakestoreapi.com/products/categories").then((res) => {
-         const categories = res.data;
+      // get all categories
+      const getAllCategories = async () => {
+         const response = await axios.get(
+            "https://fakestoreapi.com/products/categories"
+         );
+         const categories = response.data;
          setAllCategories(categories);
-      });
-      console.log(allCategories);
+      };
+      getAllCategories();
    }, []);
 
    const mobileMenuHandler = () => {
@@ -88,8 +92,11 @@ function Nav() {
                         } absolute top-12 left-0 w-[180px] bg-white shadow-md overflow-hidden transition-all duration-500 z-20`}
                      >
                         {allCategories.map((category) => (
-                           <li className="text-start p-1.5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors cursor-pointer">
-                              {category}
+                           <li
+                              className="text-start p-1.5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors cursor-pointer"
+                              key={category}
+                           >
+                              {category.toUpperCase()}
                            </li>
                         ))}
                      </ul>

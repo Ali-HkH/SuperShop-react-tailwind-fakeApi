@@ -91,7 +91,7 @@ function Home() {
                   <div className="w-full h-full absolute top-0 right-0 bg-black/35 group-hover:h-0 group-hover:w-0 transition-all duration-500"></div>
                   {/* content */}
                   <div className="absolute left-14 top-20 md:left-8 md:top-14 lg:left-14 lg:top-20">
-                     <h1 className="text-5xl md:text-2xl lg:text-5xl text-stone-800 font-bold">
+                     <h1 className="text-5xl md:text-2xl lg:text-5xl   font-bold">
                         MACBOOK PC
                      </h1>
                      <p className="text-3xl md:text-lg lg:text-3xl font-bold text-stone-900">
@@ -110,7 +110,7 @@ function Home() {
                   <div className="w-full h-full absolute top-0 right-0 bg-black/35 group-hover:h-0 group-hover:w-0 transition-all duration-500"></div>
                   {/* content */}
                   <div className="absolute left-14 bottom-20 md:left-8 md:bottom-14 lg:left-14 lg:bottom-20">
-                     <h1 className="text-5xl md:text-2xl lg:text-5xl text-stone-800 font-bold">
+                     <h1 className="text-5xl md:text-2xl lg:text-5xl   font-bold">
                         GALAXY NOTE7
                      </h1>
                      <p className="text-3xl md:text-lg lg:text-3xl font-bold text-stone-900">

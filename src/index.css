@@ -6,6 +6,9 @@
    html {
       scroll-behavior: smooth;
    }
+   body {
+      @apply text-stone-800;
+   }
 }
 @layer components {
    .container {
@@ -19,7 +22,7 @@
       background-attachment: fixed;
    }
    .about-nav {
-      @apply relative md:text-lg text-stone-800 hover:text-indigo-700;
+      @apply relative md:text-lg   hover:text-indigo-700;
    }
    .about-nav::before {
       content: "";

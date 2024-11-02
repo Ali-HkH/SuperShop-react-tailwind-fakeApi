@@ -7,7 +7,7 @@ function LinkList({ title, links }) {
          <h2 className="mb-4 text-lg font-semibold">{title}</h2>
          <ul>
             {links.map((link) => (
-               <li className="mb-3 flex items-center gap-x-2">
+               <li className="mb-3 flex items-center gap-x-2" key={link.name}>
                   <svg className="size-4 text-indigo-700">
                      <use href="#stop-circle"></use>
                   </svg>

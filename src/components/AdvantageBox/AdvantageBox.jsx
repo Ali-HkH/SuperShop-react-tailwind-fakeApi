@@ -11,7 +11,7 @@ function AdvantageBox({ svg, text }) {
                <use href={`#${svg}`}></use>
             </svg>
          </div>
-         <p className="text-xl md:text-lg lg:text-xl font-bold text-stone-800 hover:text-indigo-700 transition-colors cursor-pointer">
+         <p className="text-xl md:text-lg lg:text-xl font-bold   hover:text-indigo-700 transition-colors cursor-pointer">
             {text}
          </p>
       </div>

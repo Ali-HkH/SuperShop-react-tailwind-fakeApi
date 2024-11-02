@@ -50,7 +50,7 @@ function About() {
             className="mt-20 w-full flex flex-col items-start md:items-center md:flex-row md:justify-between"
          >
             <div className="w-full md:w-[50%]">
-               <h1 className="mb-10 text-[22px] md:text-lg lg:text-[22px] font-bold text-stone-800">
+               <h1 className="mb-10 text-[22px] md:text-lg lg:text-[22px] font-bold  ">
                   TO GET FULL PROTECTION
                </h1>
                <ul className="flex flex-col items-start gap-y-2">
@@ -94,7 +94,7 @@ function About() {
             id="reviews"
             className="mt-20 pt-20 pb-10 border-t-2 border-t-gray-300/50"
          >
-            <h1 className="mb-9 text-[22px] md:text-lg lg:text-[22px] font-bold text-stone-800">
+            <h1 className="mb-9 text-[22px] md:text-lg lg:text-[22px] font-bold  ">
                CUSTOMER REVIEWS
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

@@ -9,7 +9,7 @@ function GalleryBox({ img, name }) {
             alt="gallery"
          />
          <div className="w-full text-center absolute bottom-10 left-[50%] -translate-x-[50%]">
-            <h1 className="text-xl font-bold text-stone-800 mb-5 group-hover:text-white transition-colors">
+            <h1 className="text-xl font-bold   mb-5 group-hover:text-white transition-colors">
                {name}
             </h1>
             <a

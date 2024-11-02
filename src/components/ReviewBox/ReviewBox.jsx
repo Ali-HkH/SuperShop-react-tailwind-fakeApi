@@ -7,7 +7,7 @@ function ReviewBox({ name, img }) {
             <img src={img} alt="review-profile" className="w-full h-full" />
          </div>
          <div className="pl-5">
-            <h1 className="text-stone-800 text-lg mb-2.5 hover:text-indigo-700 transition-all cursor-pointer">
+            <h1 className="  text-lg mb-2.5 hover:text-indigo-700 transition-all cursor-pointer">
                {name}
             </h1>
             <p className="text-stone-600 line-clamp-3">
