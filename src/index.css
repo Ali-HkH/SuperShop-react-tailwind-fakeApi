@@ -27,7 +27,7 @@
    }
    .advantage-item::after {
       content: "";
-      @apply hidden md:block absolute top-[30%] -right-[25%] w-[40%] h-[2px] bg-stone-600 last:hidden;
+      @apply hidden md:block absolute top-[30%] -right-[25%] w-[40%] h-[2px] bg-stone-400 last:hidden;
    }
 }
 @layer utilities {
