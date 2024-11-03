@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BlogsData from "../../Data/BlogsData";
+import { Link } from "react-router-dom";
 
 function BlogBox() {
    const [blogCategory, setBlogCategory] = useState("popular");
@@ -59,9 +60,11 @@ function BlogBox() {
                      />
                   </div>
                   <div className="w-4/6 md:w-1/2">
-                     <h1 className="text-lg font-medium mb-1.5 hover:text-indigo-700 transition-colors cursor-pointer line-clamp-2">
-                        Lorem Khaled ipsum is a major key
-                     </h1>
+                     <Link to={``}>
+                        <h1 className="text-lg font-medium mb-1.5 hover:text-indigo-700 transition-colors cursor-pointer line-clamp-2">
+                           Lorem Khaled ipsum is a major key
+                        </h1>
+                     </Link>
                      <span className="text-sm text-stone-600">
                         {blog.day} {blog.date}
                      </span>
