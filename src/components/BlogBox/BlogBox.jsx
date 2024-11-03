@@ -52,6 +52,7 @@ function BlogBox() {
                   className="py-4 border-b border-b-gray-300 flex gap-x-3 last:border-none"
                   key={blog.id}
                >
+                  {/* image */}
                   <div className="w-2/6 md:w-1/2 aspect-auto overflow-hidden">
                      <img
                         src={blog.img}
@@ -59,8 +60,10 @@ function BlogBox() {
                         className="w-full hover:scale-110 transition-all"
                      />
                   </div>
+                  {/* content */}
                   <div className="w-4/6 md:w-1/2">
-                     <Link to={``}>
+                     {/* link */}
+                     <Link to={`/Blog/${blog.id}`}>
                         <h1 className="text-lg font-medium mb-1.5 hover:text-indigo-700 transition-colors cursor-pointer line-clamp-2">
                            Lorem Khaled ipsum is a major key
                         </h1>

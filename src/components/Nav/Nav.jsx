@@ -68,7 +68,11 @@ function Nav() {
             <div className="md:mb-8 w-full flex flex-col md:flex-row gap-y-6 items-center justify-between">
                {/* logo */}
                <div className="w-[180px] aspect-auto mt-2.5">
-                  <img src="./images/logo.png" alt="logo" className="w-full" />
+                  <img
+                     src=" ../images/logo.png"
+                     alt="logo"
+                     className="w-full"
+                  />
                </div>
                {/* category - searchBar */}
                <div className="md:ml-8 flex items-center w-full md:w-[55%] 2xl:w-[60%]">
@@ -278,7 +282,7 @@ function Nav() {
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
-                                 src="./images/flags/flag-england.jpg"
+                                 src=" ../images/flags/flag-england.jpg"
                                  alt="flag"
                                  className="w-full"
                               />
@@ -288,7 +292,7 @@ function Nav() {
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
-                                 src="./images/flags/flag-french.jpg"
+                                 src=" ../images/flags/flag-french.jpg"
                                  alt="flag"
                                  className="w-full"
                               />
@@ -298,7 +302,7 @@ function Nav() {
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
-                                 src="./images/flags/flag-german.jpg"
+                                 src=" ../images/flags/flag-german.jpg"
                                  alt="flag"
                                  className="w-full"
                               />

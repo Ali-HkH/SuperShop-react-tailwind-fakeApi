@@ -15,6 +15,7 @@ function FAQBox() {
          <ul className="px-5">
             {Array.from({ length: 5 }).map((_, index) => (
                <li
+                  key={index}
                   className="py-3 border-b border-gray-300 last:border-none"
                   onClick={() => accordionHandle(index)}
                >

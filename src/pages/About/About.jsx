@@ -8,7 +8,7 @@ function About() {
          {/* header image */}
          <div className="w-full aspect-[auto] md:aspect-[2/1] lg:aspect-[2.6/1] pt-8">
             <img
-               src="./images/workinglaptop.jpg"
+               src=" ../images/workinglaptop.jpg"
                alt="about-header"
                className="w-full h-full"
             />
@@ -83,7 +83,7 @@ function About() {
             </div>
             <div className="w-full md:w-[40%]">
                <img
-                  src="./images/user-guide.jpg"
+                  src=" ../images/user-guide.jpg"
                   alt="user-guide"
                   className="w-full"
                />

@@ -20,6 +20,7 @@ function Blog() {
          <div className="md:col-span-6 lg:col-span-8 xl:col-span-9 mt-12 md:mt-0">
             {BlogsData.map((blog) => (
                <BlogCard
+                  key={blog.id}
                   id={blog.id}
                   img={blog.img}
                   author={blog.author}

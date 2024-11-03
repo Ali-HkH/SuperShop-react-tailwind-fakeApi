@@ -26,21 +26,21 @@ function AdBox() {
          >
             <SwiperSlide>
                <AdSlide
-                  img="./images/Ads/Ad2.jpg"
+                  img=" ../images/Ads/Ad2.jpg"
                   title="HANBAGS STYLE 2018"
                   off="20% OFF"
                />
             </SwiperSlide>
             <SwiperSlide>
                <AdSlide
-                  img="./images/Ads/Ad1.jpg"
+                  img=" ../images/Ads/Ad1.jpg"
                   title="New Collection"
                   off="40% OFF"
                />
             </SwiperSlide>
             <SwiperSlide>
                <AdSlide
-                  img="./images/Ads/Ad3.jpg"
+                  img=" ../images/Ads/Ad3.jpg"
                   title="SUMMER STYLE"
                   off="30% OFF"
                />
