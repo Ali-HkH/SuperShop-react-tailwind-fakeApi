@@ -19,13 +19,13 @@ function BlogBox() {
    return (
       <div className="border border-gray-300">
          {/* heading */}
-         <div className="flex items-center gap-x-5 text-xl font-medium px-5 py-2 border-b border-gray-300">
+         <div className="flex items-center gap-x-5 text-xl font-medium text-white bg-indigo-700 px-5 py-2 border-b border-gray-300">
             {/* popular */}
             <span
                onClick={() => setBlogCategory("popular")}
                className={`${
-                  blogCategory === "popular" && "text-indigo-700"
-               } hover:text-indigo-700 transition-colors cursor-pointer`}
+                  blogCategory === "popular" && "text-amber-300"
+               } hover:text-amber-300 transition-colors cursor-pointer`}
             >
                POPULAR
             </span>
@@ -33,8 +33,8 @@ function BlogBox() {
             <span
                onClick={() => setBlogCategory("recent")}
                className={`${
-                  blogCategory === "recent" && "text-indigo-700"
-               } hover:text-indigo-700 transition-colors cursor-pointer`}
+                  blogCategory === "recent" && "text-amber-300"
+               } hover:text-amber-300 transition-colors cursor-pointer`}
             >
                RECENT
             </span>

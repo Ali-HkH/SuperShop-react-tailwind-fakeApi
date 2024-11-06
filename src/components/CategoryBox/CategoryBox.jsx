@@ -27,7 +27,7 @@ function CategoryBox() {
 
    return (
       <div className="border border-gray-300">
-         <h1 className="text-xl font-medium   px-5 py-2 border-b border-gray-300">
+         <h1 className="text-xl font-medium text-white bg-indigo-700 px-5 py-2 border-b border-gray-300">
             CATEGORIES
          </h1>
          <ul className="py-2 px-5">

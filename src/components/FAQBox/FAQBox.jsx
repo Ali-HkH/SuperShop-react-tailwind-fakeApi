@@ -9,7 +9,7 @@ function FAQBox() {
 
    return (
       <div className="border border-gray-300">
-         <div className="text-xl font-medium px-5 py-2 border-b border-gray-300">
+         <div className="text-xl text-white bg-indigo-700 font-medium px-5 py-2 border-b border-gray-300">
             FAQ
          </div>
          <ul className="px-5">

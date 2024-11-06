@@ -111,7 +111,7 @@ function Footer() {
                </div>
                {/* payment */}
                <div className="flex md:flex-col xl:flex-row gap-y-4 gap-x-6">
-                  <span>PAYMENT METHODS</span>
+                  <span>PAYMENT METHODS :</span>
                   <ul className="flex gap-x-3">
                      <PaymentCard img=" ../images/payment/master-card.jpg" />
                      <PaymentCard img=" ../images/payment/paypal.jpg" />

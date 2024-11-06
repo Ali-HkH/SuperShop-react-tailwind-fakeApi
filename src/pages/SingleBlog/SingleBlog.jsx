@@ -14,6 +14,7 @@ function SingleBlog() {
       let filteredBlog = BlogsData.filter((blog) => blog.id == blogID);
       setMainBlog(filteredBlog);
    }, []);
+   console.log(mainBlog);
 
    return (
       <div className="container pt-8 grid md:grid-cols-10 lg:grid-cols-12 gap-x-5">
@@ -25,7 +26,14 @@ function SingleBlog() {
             <AdBox />
          </div>
          {/* main */}
-         <div className="md:col-span-6 lg:col-span-8 xl:col-span-9 mt-12 md:mt-0"></div>
+         <div className="md:col-span-6 lg:col-span-8 xl:col-span-9 mt-12 md:mt-0">
+            <div>
+               <img className="w-full" src={mainBlog[0].img} alt="Blog-img" />
+               <div className="py-4">
+                  <h1 className="">Lorem Khaled Ipsum is a major key</h1>
+               </div>
+            </div>
+         </div>
       </div>
    );
 }
