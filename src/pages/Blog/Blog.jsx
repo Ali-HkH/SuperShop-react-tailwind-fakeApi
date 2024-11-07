@@ -8,7 +8,7 @@ import BlogCard from "../../components/BlogCard/BlogCard";
 
 function Blog() {
    return (
-      <div className="container pt-8 grid md:grid-cols-10 lg:grid-cols-12 gap-x-5">
+      <div className="container pt-8 grid md:grid-cols-10 lg:grid-cols-12 gap-x-8">
          {/* sidebar */}
          <div className="md:col-span-4 lg:col-span-4 xl:col-span-3 space-y-8">
             <CategoryBox />
