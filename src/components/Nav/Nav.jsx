@@ -44,12 +44,14 @@ function Nav() {
                </div>
                {/* Itmes menu */}
                <ul className="hidden md:flex items-center gap-x-5 ">
-                  <li className="flex gap-x-1 items-center text-stone-600 hover:text-indigo-700 cursor-pointer">
-                     <svg className="size-4 text-indigo-700 ">
-                        <use href="#user"></use>
-                     </svg>
-                     My Account
-                  </li>
+                  <Link to="/Login">
+                     <li className="flex gap-x-1 items-center text-stone-600 hover:text-indigo-700 cursor-pointer">
+                        <svg className="size-4 text-indigo-700 ">
+                           <use href="#user"></use>
+                        </svg>
+                        My Account
+                     </li>
+                  </Link>
                   <li className="flex gap-x-1 items-center text-stone-600 hover:text-indigo-700 cursor-pointer">
                      <svg className="size-4 text-indigo-700 ">
                         <use href="#heart"></use>

@@ -8,6 +8,13 @@ import RelatedBox from "../RelatedBox/RelatedBox";
 function Related({ related }) {
    const swiperRef = useRef();
 
+   const getRandomRelateds = (array) => {
+      const shuffledArray = array.sort(() => 0.5 - Math.random());
+      return shuffledArray.slice(0, 5);
+   };
+
+   const randomArrays = getRandomRelateds(related);
+
    return (
       <div className="w-[86vw] md:w-full mt-12">
          <div className="flex items-center justify-between mb-8">
@@ -60,7 +67,7 @@ function Related({ related }) {
             }}
             className="mySwiper"
          >
-            {related.map((post) => (
+            {randomArrays.map((post) => (
                <SwiperSlide key={post.id}>
                   <RelatedBox
                      id={post.id}

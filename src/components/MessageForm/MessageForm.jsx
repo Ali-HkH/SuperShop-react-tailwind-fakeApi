@@ -2,7 +2,7 @@ import React from "react";
 
 function MessageForm({ title, placeholder, button }) {
    return (
-      <div className="mt-12">
+      <div className="my-12">
          <h1 className="mb-8 text-[22px] font-bold">{title}</h1>
          <form action="#" className="lg:pr-20">
             <div className="flex flex-col items-start gap-y-6 md:flex-row gap-x-2 lg:gap-x-4 xl:gap-x-10 mb-8">

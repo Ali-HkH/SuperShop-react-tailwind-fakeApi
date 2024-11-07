@@ -92,7 +92,7 @@ function About() {
          {/* reviews */}
          <div
             id="reviews"
-            className="mt-20 pt-20 pb-10 border-t-2 border-t-gray-300/50"
+            className="mt-20 mb-12 pt-20 pb-10 border-t-2 border-t-gray-300/50"
          >
             <h1 className="mb-9 text-[22px] md:text-lg lg:text-[22px] font-bold  ">
                CUSTOMER REVIEWS

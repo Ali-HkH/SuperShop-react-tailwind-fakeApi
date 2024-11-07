@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 function Brands() {
    return (
-      <div className="container py-8 md:py-12">
+      <div className="container py-8 md:py-12 mb-8">
          <Swiper
             breakpoints={{
                DEFAULT: {
