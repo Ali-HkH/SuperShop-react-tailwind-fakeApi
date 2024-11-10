@@ -8,15 +8,15 @@ function Nav() {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const [isAccountSubOpen, setIsAccountSubOpen] = useState(false);
 
+   const getAllCategories = async () => {
+      const response = await axios.get(
+         "https://fakestoreapi.com/products/categories"
+      );
+      const categories = response.data;
+      setAllCategories(categories);
+   };
+
    useEffect(() => {
-      // get all categories
-      const getAllCategories = async () => {
-         const response = await axios.get(
-            "https://fakestoreapi.com/products/categories"
-         );
-         const categories = response.data;
-         setAllCategories(categories);
-      };
       getAllCategories();
    }, []);
 
@@ -238,7 +238,7 @@ function Nav() {
                      <Link to="/">HOME</Link>
                   </li>
                   <li className="hover:bg-indigo-800">
-                     <Link to="/">SHOP</Link>
+                     <Link to="/Shop">SHOP</Link>
                   </li>
                   <li className="hover:bg-indigo-800">
                      <Link to="/Blog">BLOG</Link>
@@ -280,7 +280,7 @@ function Nav() {
                      <svg className="size-4">
                         <use href="#chevron-down"></use>
                      </svg>
-                     <ul className="absolute top-[48px] right-0 bg-white group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal z-20">
+                     <ul className="absolute top-[48px] right-0 bg-white group-hover:h-[120px] group-hover:p-1.5 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal z-20">
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
@@ -321,7 +321,7 @@ function Nav() {
                      <svg className="size-4 ">
                         <use href="#chevron-down"></use>
                      </svg>
-                     <ul className="absolute top-[48px] right-0 bg-white group-hover:h-[140px] group-hover:p-3 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal z-20">
+                     <ul className="absolute top-[48px] right-0 bg-white group-hover:h-[120px] group-hover:p-1.5 h-0 p-0 shadow-md overflow-hidden transition-all duration-500 child:font-normal z-20">
                         <li className="flex items-center justify-center gap-x-3 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span>$</span>
                            USD

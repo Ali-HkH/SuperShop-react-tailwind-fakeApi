@@ -19,7 +19,9 @@ function Related({ related }) {
       <div className="w-[86vw] md:w-full mt-12">
          <div className="flex items-center justify-between mb-8">
             <h1 className="text-[22px] font-bold">RELATED POSTS</h1>
+            {/* navigation */}
             <div className="flex justify-center items-center gap-x-1">
+               {/* prev button */}
                <button
                   onClick={() => swiperRef.current?.slidePrev()}
                   className="flex items-center justify-center p-1.5 size-[30px] bg-black/35 hover:bg-indigo-700 text-white transition-colors"
@@ -28,6 +30,7 @@ function Related({ related }) {
                      <use href="#chevron-right"></use>
                   </svg>
                </button>
+               {/* next button */}
                <button
                   onClick={() => swiperRef.current?.slideNext()}
                   className="flex items-center justify-center p-1.5 size-[30px] bg-black/35 hover:bg-indigo-700 text-white transition-colors"
