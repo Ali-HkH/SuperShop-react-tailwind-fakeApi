@@ -9,6 +9,60 @@
    body {
       @apply text-stone-800;
    }
+
+   /********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+   -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+}
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+   background-color: #4338ca;
+   border-radius: 0.4rem;
+   height: 0.4rem;  
+}
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+   appearance: none;
+   margin-top: -6px; /* Centers thumb on the track */
+   background-color: #818cf8;
+   height: 1.2rem;
+   width: 1rem;
+}
+input[type="range"]:focus::-webkit-slider-thumb {   
+  border: none;
+  outline: none;
+}
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+   background-color: #4338ca;
+   border-radius: 0.4rem;
+   height: 0.4rem;
+}
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+   border: none;
+   border-radius: 0; 
+   background-color: #818cf8;
+   height: 1.2rem;
+   width: 1rem;
+}
+input[type="range"]:focus::-moz-range-thumb {
+  border: none;
+  outline: none;
+}
 }
 @layer components {
    .container {
@@ -32,6 +86,83 @@
       content: "";
       @apply hidden md:block absolute top-[30%] -right-[25%] w-[40%] h-[2px] bg-stone-400 last:hidden;
    }
+
+   /* Loader Spinner Styles */
+   .loader {
+      position: relative;
+      margin: 0 auto;
+      width: 100px;
+    }
+    .loader:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+    .circular {
+      -webkit-animation: rotate 2s linear infinite;
+      animation: rotate 2s linear infinite;
+      height: 44px;
+      -webkit-transform-origin: center center;
+      transform-origin: center center;
+      width: 44px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      -webkit-animation: dash 1.5s ease-in-out infinite,
+        color 6s ease-in-out infinite;
+      animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      stroke-linecap: round;
+    }
+
+
+    /* Loader Spinner Animations */
+    @-webkit-keyframes rotate {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes rotate {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
 }
 @layer utilities {
 }

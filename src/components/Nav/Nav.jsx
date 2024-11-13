@@ -144,7 +144,7 @@ function Nav() {
                            </Link>
                         </li>
                         <li className="text-lg text-stone-600 hover:text-indigo-700 transition-colors">
-                           <Link to="/Shop">
+                           <Link to="/Shop/all">
                               <span className="inline-block p-2 ">SHOP</span>
                            </Link>
                         </li>
@@ -238,7 +238,7 @@ function Nav() {
                      <Link to="/">HOME</Link>
                   </li>
                   <li className="hover:bg-indigo-800">
-                     <Link to="/Shop">SHOP</Link>
+                     <Link to="/Shop/all">SHOP</Link>
                   </li>
                   <li className="hover:bg-indigo-800">
                      <Link to="/Blog">BLOG</Link>
