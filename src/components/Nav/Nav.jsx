@@ -16,16 +16,16 @@ function Nav() {
       setAllCategories(categories);
    };
 
-   useEffect(() => {
-      getAllCategories();
-   }, []);
-
    const mobileMenuHandler = () => {
       setIsMenuOpen(!isMenuOpen);
       if (isAccountSubOpen === true) {
          setIsAccountSubOpen(false);
       }
    };
+
+   useEffect(() => {
+      getAllCategories();
+   }, []);
 
    return (
       <div>
@@ -85,7 +85,7 @@ function Nav() {
                      className="relative"
                   >
                      <span className="hidden lg:inline-block px-10 py-3 border border-gray-300">
-                        All Categories
+                        Select Category
                      </span>
                      <span>
                         <svg className=" bg-indigo-700 text-white static size-[48px] p-3 lg:absolute lg:top-4 lg:-right-3 lg:size-5 lg:p-0.5">
@@ -94,15 +94,20 @@ function Nav() {
                      </span>
                      <ul
                         className={`${
-                           isCategoryOpen ? "p-1 h-[154px]" : "h-0 p-0"
-                        } absolute top-12 left-0 w-[180px] bg-white shadow-md overflow-hidden transition-all duration-500 z-20`}
+                           isCategoryOpen ? "p-1 h-[188px]" : "h-0 p-0"
+                        } absolute top-14 left-0 w-[180px] bg-white shadow-md overflow-hidden transition-all duration-500 z-20`}
                      >
+                        <li className="text-start p-1.5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors cursor-pointer">
+                           <Link to={`/Shop/all`}>ALL CATEGORIES</Link>
+                        </li>
                         {allCategories.map((category) => (
                            <li
                               className="text-start p-1.5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors cursor-pointer"
                               key={category}
                            >
-                              {category.toUpperCase()}
+                              <Link to={`/Shop/${category}`}>
+                                 {category.toUpperCase()}
+                              </Link>
                            </li>
                         ))}
                      </ul>

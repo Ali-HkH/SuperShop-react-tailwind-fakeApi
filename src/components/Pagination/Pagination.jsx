@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Pagination({ allItems, sendShownItems }) {
+function Pagination({ allItems, sendShownItems, scrollToElement }) {
    const [currentPage, setCurrentPage] = useState(1);
    const [itemsPerPage, setItemsPerPage] = useState(6);
    const [pages, setPages] = useState([]);
@@ -9,16 +9,24 @@ function Pagination({ allItems, sendShownItems }) {
    const indexOfLastItems = currentPage * itemsPerPage;
    const indexOfFirstItems = indexOfLastItems - itemsPerPage;
 
-   // change page function
-   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+   // changing the page function
+   const pageButtonClickHandler = (pageNumber) => {
+      setCurrentPage(pageNumber)
+      scrollToElement.current.scrollIntoView({
+         behavior: "smooth",
+         block: "start",
+      });
+   };
 
+   // set new shown items & set new pagination buttons when changing page, items count in page or allItems
    useEffect(() => {
+      // set new shown items
       const newCurrentItems = allItems.slice(
          indexOfFirstItems,
          indexOfLastItems
       );
       sendShownItems(newCurrentItems);
-
+      // set new pagination
       const newPages = [];
       for (let i = 1; i <= Math.ceil(allItems.length / itemsPerPage); i++) {
          newPages.push(i);
@@ -26,12 +34,13 @@ function Pagination({ allItems, sendShownItems }) {
       setPages(newPages);
    }, [currentPage, itemsPerPage, allItems]);
 
+   // set the page to 1 after changing items
    useEffect(() => {
       setCurrentPage(1);
    }, [allItems]);
 
    return (
-      <div className="flex items-center justify-center gap-x-5 mt-6 mb-12">
+      <div className="flex items-center justify-center gap-x-5 mt-10 mb-12">
          {/* items per page select */}
          <div
             role="button"
@@ -40,7 +49,11 @@ function Pagination({ allItems, sendShownItems }) {
          >
             <div className="flex items-center p-2 gap-x-3 border border-gray-300">
                <span>{`shown ${itemsPerPage}`}</span>
-               <span className={`${isItemsPerPageMenu && "rotate-180" } transition-all duration-500`}>
+               <span
+                  className={`${
+                     isItemsPerPageMenu && "rotate-180"
+                  } transition-all duration-500`}
+               >
                   <svg className="size-5">
                      <use href="#chevron-down"></use>
                   </svg>
@@ -85,7 +98,7 @@ function Pagination({ allItems, sendShownItems }) {
             {pages.map((page) => (
                <li key={page}>
                   <button
-                     onClick={() => paginate(page)}
+                     onClick={() => pageButtonClickHandler(page)}
                      className={`${
                         currentPage === page
                            ? "bg-indigo-700 text-white"

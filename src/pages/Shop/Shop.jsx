@@ -1,36 +1,42 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+// components
 import CategoryBox from "../../components/CategoryBox/CategoryBox";
 import FAQBox from "../../components/FAQBox/FAQBox";
 import AdBox from "../../components/AdBox/AdBox";
 import ShopSlide from "../../components/ShopSlide/ShopSlide";
-import axios from "axios";
 import ProductBox from "../../components/ProductBox/ProductBox";
 import ProductBoxList from "../../components/ProductBoxList/ProductBoxList";
-import { useParams } from "react-router-dom";
 import Pagination from "../../components/Pagination/Pagination";
+// swiper package
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 function Shop() {
+   // refs and params
    const swiperRef = useRef();
+   const shopHeadingRef = useRef();
    const { shopCategory } = useParams();
+   // states
    const [categoryCount, setCategoryCount] = useState({});
-   const [shopDisplay, setShopDisplay] = useState("Grid");
-   const [priceFilterValue, setPriceFilterValue] = useState(900);
    const [allProducts, setAllProducts] = useState([]);
    const [shownProducts, setShownProducts] = useState([]);
+   const [shopDisplay, setShopDisplay] = useState("Grid");
+   const [priceFilterValue, setPriceFilterValue] = useState(1000);
 
-   // callback functions from child
+   // callback function for getting category count from CategoryBox component
    const getCategoryCount = (data) => {
       setCategoryCount(data);
    };
+   // callback function for paginating products from Pagination component
    const getShownProducts = (products) => {
       setShownProducts(products);
    };
 
-   // page functions
+   // main functions
    const getAllProducts = async () => {
       try {
          const response = await axios.get("https://fakestoreapi.com/products");
@@ -40,7 +46,6 @@ function Shop() {
          console.log("something went wrong.", error);
       }
    };
-
    const getProductFromCategory = async (category) => {
       try {
          const response = await axios.get(
@@ -52,7 +57,6 @@ function Shop() {
          console.log("somthing went wrong!", error);
       }
    };
-
    const setProductCategory = () => {
       switch (shopCategory) {
          case "all":
@@ -73,17 +77,28 @@ function Shop() {
             getAllProducts();
       }
    };
+   const filterPriceHandler = () => {
+      const priceFilteredProducts = allProducts.filter(
+         (product) => product.price <= priceFilterValue
+      );
+      setShownProducts(priceFilteredProducts);
+   };
 
    useEffect(() => {
       setProductCategory();
+      setPriceFilterValue(1000);
    }, [shopCategory]);
+
+   useEffect(() => {
+      filterPriceHandler();
+   }, [allProducts]);
 
    return (
       <div className="container pt-8 grid md:grid-cols-10 lg:grid-cols-12 gap-x-8">
          {/* sidebar */}
          <div className="md:col-span-4 lg:col-span-4 xl:col-span-3 space-y-8 mb-12">
             <CategoryBox sendCategory={getCategoryCount} />
-            {/* Price Box */}
+            {/* PriceBox */}
             <div className="border border-gray-300">
                <h1 className="text-xl font-medium text-white bg-indigo-700 px-5 py-2 border-b border-gray-300">
                   PRICE
@@ -97,7 +112,7 @@ function Shop() {
                         className=" h-10"
                         type="range"
                         min={25}
-                        max={900}
+                        max={1000}
                         value={priceFilterValue}
                         step={5}
                      />
@@ -106,7 +121,10 @@ function Shop() {
                         {priceFilterValue}
                      </span>
                   </div>
-                  <button className="px-4 py-2 bg-indigo-500 rounded-lg font-medium text-white hover:bg-indigo-700 transition-colors">
+                  <button
+                     onClick={filterPriceHandler}
+                     className="px-4 py-2 bg-indigo-500 rounded-lg font-medium text-white hover:bg-indigo-700 transition-colors"
+                  >
                      Filter
                   </button>
                </div>
@@ -190,7 +208,10 @@ function Shop() {
             {/* shop list */}
             <div className="mb-12">
                {/* shop list heading */}
-               <div className="my-12 w-full bg-stone-50 border border-gray-300/30 py-4 px-5 flex items-center justify-between">
+               <div
+                  ref={shopHeadingRef}
+                  className="my-12 w-full bg-stone-50 border border-gray-300/30 py-4 px-5 flex items-center justify-between"
+               >
                   <h1 className="font-bold text-3xl text-indigo-700">shop</h1>
                   <div className="flex items-center border border-gray-300">
                      <span
@@ -216,21 +237,35 @@ function Shop() {
                   </div>
                </div>
                {/* shop Products */}
-               {shopDisplay === "Grid" ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-10">
-                     {shownProducts.map((product) => (
-                        <ProductBox key={product.id} {...product} />
-                     ))}
+               {shownProducts.length === 0 ? (
+                  <div className="max-w-lg mx-auto bg-indigo-300 px-8 py-5">
+                     <h1 className="text-xl font-medium">
+                        The Product you are looking for has not found!
+                     </h1>
                   </div>
                ) : (
-                  <div className="flex flex-col items-start justify-start gap-y-8">
-                     {shownProducts.map((product) => (
-                        <ProductBoxList key={product.id} {...product} />
-                     ))}
+                  <div>
+                     {shopDisplay === "Grid" ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-10">
+                           {shownProducts.map((product) => (
+                              <ProductBox key={product.id} {...product} />
+                           ))}
+                        </div>
+                     ) : (
+                        <div className="flex flex-col items-start justify-start gap-y-8">
+                           {shownProducts.map((product) => (
+                              <ProductBoxList key={product.id} {...product} />
+                           ))}
+                        </div>
+                     )}
+                     <Pagination
+                        allItems={allProducts}
+                        sendShownItems={getShownProducts}
+                        scrollToElement={shopHeadingRef}
+                     />
                   </div>
                )}
             </div>
-            <Pagination allItems={allProducts} sendShownItems={getShownProducts}/>
          </div>
       </div>
    );
