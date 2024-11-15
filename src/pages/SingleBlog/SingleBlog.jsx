@@ -9,10 +9,13 @@ import AdBox from "../../components/AdBox/AdBox";
 import Navigation from "../../components/Navigation/Navigation";
 import Related from "../../components/Related/Related";
 import MessageForm from "../../components/MessageForm/MessageForm";
+import Comments from "../../components/Comments/Comments";
 
 function SingleBlog() {
    const { blogID } = useParams();
+   // get main blog
    const mainBlog = BlogsData.find((blog) => blog.id === parseInt(blogID));
+   // get all blogs except main blog
    const relatedBlogs = BlogsData.filter(
       (blog) => blog.id !== parseInt(blogID)
    );
@@ -197,6 +200,10 @@ function SingleBlog() {
             />
             {/* related posts */}
             <Related related={relatedBlogs} />
+            {/* user comments */}
+            {mainBlog.comment && (
+               <Comments />
+            )}
             {/* comment form */}
             <MessageForm
                title="LEAVE COMMENTS"

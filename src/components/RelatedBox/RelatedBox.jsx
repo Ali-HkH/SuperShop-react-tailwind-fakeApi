@@ -37,7 +37,7 @@ function RelatedBox({ id, img, author, day, date, comment }) {
             </p>
             {/* bottom */}
             <div className="flex items-center justify-between">
-               <Link to={`Blog/${id}`}>
+               <Link to={`/Blog/${id}`}>
                   <span className="text-lg font-medium hover:text-indigo-700 transition-colors">
                      Read More
                   </span>
