@@ -7,10 +7,12 @@ import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 import SingleBlog from "./pages/SingleBlog/SingleBlog"
 import Shop from "./pages/Shop/Shop"
+import SingleShop from "./pages/SingleShop/SingleShop"
 
 const routes = [
     {path: "/", element:<Home /> },
     {path: "/Shop/:shopCategory", element:<Shop /> },
+    {path: "/SingleShop/:productID", element:<SingleShop /> },
     {path: "/Blog", element:<Blog /> },
     {path: "/Blog/:blogID", element:<SingleBlog /> },
     {path: "/Cart", element:<Cart /> },

@@ -12,7 +12,7 @@ function ProductBox(props) {
         {/* image & buttons */}
          <div className="group relative overflow-hidden aspect-square p-5 pb-0">
             {/* image */}
-            <Link to={""}>
+            <Link to={`/SingleShop/${props.id}`}>
                <img
                   src={props.image}
                   alt="product-img"
@@ -53,7 +53,7 @@ function ProductBox(props) {
          {/*  details */}
          <div className="p-5">
             {/* title */}
-            <Link to={""}>
+            <Link to={`/SingleShop/${props.id}`}>
                <h1 className="line-clamp-1 mb-2.5 font-medium hover:text-indigo-700 transition-colors">
                   {props.title}
                </h1>

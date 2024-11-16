@@ -4,8 +4,9 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import RelatedBox from "../RelatedBox/RelatedBox";
+import ProductBox from "../ProductBox/ProductBox"
 
-function Related({ related }) {
+function Related({ related, isShop }) {
    const swiperRef = useRef();
 
    const getRandomRelateds = (array) => {
@@ -18,7 +19,7 @@ function Related({ related }) {
    return (
       <div className="w-[86vw] md:w-full mt-12">
          <div className="flex items-center justify-between mb-8">
-            <h1 className="text-[22px] font-bold">RELATED POSTS</h1>
+            <h1 className="text-[22px] font-bold"> {isShop ? "UPSELL PRODUCTS" : "RELATED POSTS"}</h1>
             {/* navigation */}
             <div className="flex justify-center items-center gap-x-1">
                {/* prev button */}
@@ -70,18 +71,24 @@ function Related({ related }) {
             }}
             className="mySwiper"
          >
-            {randomArrays.map((post) => (
-               <SwiperSlide key={post.id}>
-                  <RelatedBox
-                     id={post.id}
-                     img={post.img}
-                     author={post.author}
-                     date={post.date}
-                     day={post.day}
-                     comment={post.comment}
-                  />
-               </SwiperSlide>
-            ))}
+            {isShop
+               ? randomArrays.map((product) => (
+                    <SwiperSlide key={product.id}>
+                       <ProductBox {...product}/>
+                    </SwiperSlide>
+                 ))
+               : randomArrays.map((post) => (
+                    <SwiperSlide key={post.id}>
+                       <RelatedBox
+                          id={post.id}
+                          img={post.img}
+                          author={post.author}
+                          date={post.date}
+                          day={post.day}
+                          comment={post.comment}
+                       />
+                    </SwiperSlide>
+                 ))}
          </Swiper>
       </div>
    );

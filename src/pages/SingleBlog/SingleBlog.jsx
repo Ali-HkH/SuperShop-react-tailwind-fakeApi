@@ -199,7 +199,7 @@ function SingleBlog() {
                mainRoute="Blog"
             />
             {/* related posts */}
-            <Related related={relatedBlogs} />
+            <Related related={relatedBlogs} isShop={false}/>
             {/* user comments */}
             {mainBlog.comment && (
                <Comments />

@@ -10,7 +10,7 @@ function ProductBoxList(props) {
    return (
       <div className="w-full px-8 py-5 border border-gray-300 flex items-center gap-x-8">
          <div className="p-5 overflow-hidden w-1/3">
-            <Link to={""}>
+            <Link to={`/SingleShop/${props.id}`}>
                <img
                   src={props.image}
                   alt="product-image"
@@ -24,8 +24,8 @@ function ProductBoxList(props) {
             <div className="w-full pb-5 border-b border-gray-300/50 flex items-center justify-between">
                {/* product detail */}
                <div className="flex flex-col items-start gap-y-1">
-                  {/* price */}
-                  <Link to={""}>
+                  {/* title */}
+                  <Link to={`/SingleShop/${props.id}`}>
                      <h1 className="max-w-64 mb-2.5 text-xl font-medium line-clamp-1 hover:text-indigo-500 transition-colors">
                         {props.title}
                      </h1>
@@ -66,7 +66,7 @@ function ProductBoxList(props) {
                   <p className="text-lg font-medium text-stone-600">
                      count : {props.rating.count}
                   </p>
-                  {/* available */}
+                  {/* availablity */}
                   <p className="text-lg font-medium text-slate-600">
                      Availablity :{" "}
                      {props.rating.count > 0 ? (

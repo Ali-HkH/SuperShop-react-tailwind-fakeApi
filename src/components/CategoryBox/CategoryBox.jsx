@@ -12,6 +12,8 @@ function CategoryBox({ sendCategory }) {
          const response = await axios.get("https://fakestoreapi.com/products");
          const products = response.data;
          setAllProductsCount(products.length);
+         
+         // reduce function for getting category counts
          const categoryCounts = products.reduce((counts, product) => {
             counts[product.category] = (counts[product.category] || 0) + 1;
             return counts;

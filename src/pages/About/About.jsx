@@ -112,7 +112,7 @@ function About() {
                />
                <ReviewBox
                   img="/images/review/review-4.jpg"
-                  name="nikole brake"
+                  name="Nikole Brakeson"
                />
             </div>
          </div>
