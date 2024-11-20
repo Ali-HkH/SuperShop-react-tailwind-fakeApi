@@ -121,7 +121,6 @@ input[type="range"]:focus::-moz-range-thumb {
       stroke-linecap: round;
     }
 
-
     /* Loader Spinner Animations */
     @-webkit-keyframes rotate {
       100% {
@@ -161,6 +160,20 @@ input[type="range"]:focus::-moz-range-thumb {
       100% {
         stroke-dasharray: 89, 200;
         stroke-dashoffset: -124px;
+      }
+    }
+
+    /* payment card animation */
+    .payment-card-rotate {
+      animation: payment-rotate .5s linear;
+    }
+
+    @keyframes payment-rotate {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
       }
     }
 }

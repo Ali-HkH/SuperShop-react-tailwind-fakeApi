@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import CartItem from "../CartItem/CartItem";
 
 function Nav() {
+
    const [allCategories, setAllCategories] = useState([]);
+   const [allProducts, setAllProducts] = useState([]);
    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const [isAccountSubOpen, setIsAccountSubOpen] = useState(false);
-
-   const getAllCategories = async () => {
-      const response = await axios.get(
-         "https://fakestoreapi.com/products/categories"
-      );
-      const categories = response.data;
-      setAllCategories(categories);
-   };
+   const [isUserLoggedIn, setIsUserLoggedIn] = useState(null);
+   const [userID, setUserID] = useState(null);
+   const [userCart, setUserCart] = useState([]);
+   const [userCartProducts, setUserCartProducts] = useState([])
+   const [totalBuy, setTotalBuy] = useState(0)
 
    const mobileMenuHandler = () => {
       setIsMenuOpen(!isMenuOpen);
@@ -23,10 +23,101 @@ function Nav() {
       }
    };
 
+   const getAllCategories = async () => {
+      try {
+         const response = await axios.get(
+            "https://fakestoreapi.com/products/categories"
+         );
+         const categories = response.data;
+         setAllCategories(categories);
+      } catch (error) {
+         console.log("something went wrong!", error);
+      }
+   };
+   const getAllProducts = async () => {
+      try {
+         const response = await axios.get(
+            "https://fakestoreapi.com/products"
+         );
+         const products = response.data;
+         setAllProducts(products);
+      } catch (error) {
+         console.log("something went wrong!", error);
+      }
+   };
+
+   const getUserCart = async () => {
+      try {
+         const response = await axios.get(
+            `https://fakestoreapi.com/carts/user/${userID}`
+         );
+         const cartProducts = response.data[0].products;
+         setUserCart(cartProducts);
+      } catch (error) {
+         console.log("somthing went wrong!", error);
+      }
+   };
+
+   const checkLogin = () => {
+      const userToken = localStorage.getItem("userToken");
+      const userInfo = localStorage.getItem("userInfo");
+   
+      if (userToken && userInfo) {
+         const user = JSON.parse(userInfo);
+         setUserID(user.id);
+         setIsUserLoggedIn(true);
+      } else {
+         setIsUserLoggedIn(false);
+      }
+   };
+
+   const getProductsInCart = () => {
+         const matchedProducts = userCart.map((cartItem) => {
+            const product = allProducts.find((product) => product.id === cartItem.productId);
+            if (product) {
+               return { ...product, quantity: cartItem.quantity };
+            }
+            return null;
+         }).filter(Boolean);
+   
+         setUserCartProducts(matchedProducts);
+   };
+
+   const getCartTotal = () => {
+      const totalProduct = userCartProducts.map(product => {
+         return product.price*product.quantity
+      })
+      const totalCart = totalProduct.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      setTotalBuy(totalCart)
+   } 
+
    useEffect(() => {
       getAllCategories();
+      checkLogin();
    }, []);
 
+   useEffect(() => {
+      if (isUserLoggedIn) {
+         getUserCart();
+         getAllProducts();
+      } else {
+         setTotalBuy(0)
+         setUserCart([])
+         setUserCartProducts([])
+      }
+   }, [isUserLoggedIn]);
+
+   useEffect(() => {
+      if (userCart.length > 0 && allProducts.length > 0) {
+         getProductsInCart();         
+      }
+   }, [userCart, allProducts]);
+   
+   useEffect(() => {
+      getCartTotal()   
+   }, [userCartProducts])
+
+   
    return (
       <div>
          {/* top nav */}
@@ -126,12 +217,15 @@ function Nav() {
                {/* mobile nav & cart */}
                <div className="w-full md:w-auto flex justify-between mb-6 md:mb-0">
                   {/* mobile nav menu */}
-                  <div className="relative md:hidden">
-                     <button onClick={mobileMenuHandler}>
+                  <div
+                     onClick={mobileMenuHandler}
+                     className="relative md:hidden"
+                  >
+                     <div>
                         <svg className="size-12 p-3 text-white bg-indigo-700">
                            <use href="#bars-3"></use>
                         </svg>
-                     </button>
+                     </div>
                      <ul
                         className={`${
                            isMenuOpen
@@ -218,17 +312,42 @@ function Nav() {
                      </ul>
                   </div>
                   {/* shopping cart icon & menu */}
-                  <div className="flex items-center">
+                  <div className="relative group flex items-center">
+                     {/* cart button */}
                      <svg className="size-12 p-3 text-white bg-indigo-700">
                         <use href="#shopping-cart"></use>
                      </svg>
-                     <div className="px-4 border border-gray-300 py-[11px]">
-                        <Link to="Cart">
+                     <Link to={"Cart"}>
+                        <div className="px-4 border border-gray-300 py-[11px]">
                            <span className="text-stone-600 md:hidden lg:inline-block">
-                              0 ITEM(S) -{" "}
+                              {userCart.length} ITEM(S) -{" "}
                            </span>
-                           <span className="text-indigo-700">$0.00</span>
-                        </Link>
+                           <span className="text-indigo-700">${totalBuy}</span>
+                        </div>
+                     </Link>
+                     {/* cart menu */}
+                     <div className="w-96 p-5 bg-white shadow-md z-20 absolute top-20 right-0 opacity-0 invisible group-hover:top-10 group-hover:opacity-100 group-hover:visible transition-all duration-500">
+                        <h1 className="mb-2.5 text-lg">({userCart.length}) ITEMS IN MY CART</h1>
+                        {/* cart products list */}
+                        {isUserLoggedIn && (
+                           <div className="space-y-3 p-3 h-[268px] overflow-y-auto">
+                           {userCartProducts.map(cartItem => (
+                              <CartItem key={cartItem.id} {...cartItem} />
+                           ))}
+                        </div>
+                        )}
+                        
+                        <div className="flex items-center gap-x-32 text-xl text-stone-500 mb-2.5 mt-5">
+                           Total <span className="text-indigo-700">${totalBuy}</span>
+                        </div>
+                        <div className="w-full flex items-center text-white">
+                           <button className="w-7/12 py-2 bg-indigo-500 hover:bg-indigo-700 transition-colors ">
+                              VIEW MY CART
+                           </button>
+                           <button className="w-5/12 py-2 bg-slate-700 hover:bg-slate-900 transition-colors">
+                              CHECKOUT
+                           </button>
+                        </div>
                      </div>
                   </div>
                </div>

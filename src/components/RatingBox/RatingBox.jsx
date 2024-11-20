@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 function RatingBox() {
-   const [rating, setRating] = useState(0); // مقدار رتبه انتخاب شده
+   const [rating, setRating] = useState(0);
 
-   // تعداد ستاره‌ها
    const totalStars = 5;
 
    return (
