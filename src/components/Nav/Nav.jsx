@@ -162,7 +162,7 @@ function Nav() {
                {/* logo */}
                <div className="w-[180px] aspect-auto mt-2.5">
                   <img
-                     src=" ../images/logo.png"
+                     src={`${process.env.PUBLIC_URL}/images/logo.png`}
                      alt="logo"
                      className="w-full"
                   />
@@ -408,8 +408,8 @@ function Nav() {
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
-                                 src=" ../images/flags/flag-england.jpg"
-                                 alt="flag"
+                                 src={`${process.env.PUBLIC_URL}/images/flags/flag-england.jpg`}
+                               alt="flag"
                                  className="w-full"
                               />
                            </span>
@@ -418,7 +418,7 @@ function Nav() {
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
-                                 src=" ../images/flags/flag-french.jpg"
+                                 src={`${process.env.PUBLIC_URL}/images/flags/flag-french.jpg`}
                                  alt="flag"
                                  className="w-full"
                               />
@@ -428,7 +428,7 @@ function Nav() {
                         <li className="flex items-center justify-center gap-x-2 py-1.5 px-5 text-stone-600 hover:bg-indigo-700 hover:text-white transition-colors">
                            <span className="w-4 aspect-auto">
                               <img
-                                 src=" ../images/flags/flag-german.jpg"
+                                 src={`${process.env.PUBLIC_URL}/images/flags/flag-german.jpg`}
                                  alt="flag"
                                  className="w-full"
                               />

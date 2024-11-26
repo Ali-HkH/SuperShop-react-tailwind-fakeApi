@@ -73,18 +73,18 @@ function Footer() {
                <div className="flex flex-col gap-y-3 items-start lg:flex-row lg:items-center lg:gap-x-8">
                   <span className="font-medium">KEEP IN TOUCH</span>
                   <div className="flex gap-x-2">
-                     <SocialBox img=" ../images/socials/facebook.png" />
-                     <SocialBox img=" ../images/socials/linkedin.png" />
-                     <SocialBox img=" ../images/socials/twitter.png" />
-                     <SocialBox img=" ../images/socials/google.png" />
-                     <SocialBox img=" ../images/socials/pinterest.png" />
-                     <SocialBox img=" ../images/socials/social-6.png" />
+                     <SocialBox img={`${process.env.PUBLIC_URL}/images/socials/facebook.png`} />
+                     <SocialBox img={`${process.env.PUBLIC_URL}/images/socials/linkedin.png`} />
+                     <SocialBox img={`${process.env.PUBLIC_URL}/images/socials/twitter.png`} />
+                     <SocialBox img={`${process.env.PUBLIC_URL}/images/socials/google.png`} />
+                     <SocialBox img={`${process.env.PUBLIC_URL}/images/socials/pinterest.png`} />
+                     <SocialBox img={`${process.env.PUBLIC_URL}/images/socials/social-6.png`} />
                   </div>
                </div>
             </div>
          </div>
          {/* footer bottom */}
-         <div className="py-5 bg-indigo-700 text-white">
+         <div className="py-8 bg-indigo-700 text-white">
             <div className="container w-full flex flex-col gap-y-4 items-start md:items-center md:flex-row md:justify-between">
                <div className="flex flex-col gap-y-4 lg:flex-row  lg:items-baseline">
                   <span className="mr-12 font-medium">
@@ -113,10 +113,10 @@ function Footer() {
                <div className="flex md:flex-col xl:flex-row gap-y-4 gap-x-6">
                   <span>PAYMENT METHODS :</span>
                   <ul className="flex gap-x-3">
-                     <PaymentCard img=" ../images/payment/master-card.jpg" />
-                     <PaymentCard img=" ../images/payment/paypal.jpg" />
-                     <PaymentCard img=" ../images/payment/skrill.jpg" />
-                     <PaymentCard img=" ../images/payment/visa.jpg" />
+                     <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/master-card.jpg`} />
+                     <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/paypal.jpg`} />
+                     <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/skrill.jpg`} />
+                     <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/visa.jpg`} />
                   </ul>
                </div>
             </div>

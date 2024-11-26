@@ -46,31 +46,31 @@ function Home() {
             <div className="container h-auto md:h-[95%] lg:h-[110vh] grid grid-cols-1 grid-rows-4 xs:grid-cols-2 xs:grid-rows-3 md:grid-cols-3 gap-5 lg:gap-8 child:max-h-80 xs:child:max-h-max">
                <div className="group relative col-span-1 row-span-1 xs:row-span-2 bg-blue-400">
                   <GalleryBox
-                     img=" ../images/gallery/macbook.jpg"
+                     img={`${process.env.PUBLIC_URL}/images/gallery/macbook.jpg`}
                      name="MACBOOK PRO"
                   />
                </div>
                <div className="group relative col-span-1 row-span-1 xs:row-span-3 bg-blue-400 hidden md:block">
                   <GalleryBox
-                     img=" ../images/gallery/watch.jpg"
+                     img={`${process.env.PUBLIC_URL}/images/gallery/watch.jpg`}
                      name="MEN'S WATCH OMEGA"
                   />
                </div>
                <div className="group relative col-span-1 row-span-1 bg-blue-400">
                   <GalleryBox
-                     img=" ../images/gallery/colores.jpg"
+                     img={`${process.env.PUBLIC_URL}/images/gallery/colores.jpg`}
                      name="COLORES APPLESFERA"
                   />
                </div>
                <div className="group relative col-span-1 row-span-1 xs:row-span-2 bg-blue-400">
                   <GalleryBox
-                     img=" ../images/gallery/macbook2.jpg"
+                     img={`${process.env.PUBLIC_URL}/images/gallery/macbook2.jpg`}
                      name="ACCESSORIES"
                   />
                </div>
                <div className="group relative col-span-1 row-span-1 bg-blue-400">
                   <GalleryBox
-                     img=" ../images/gallery/iphone.jpg"
+                     img={`${process.env.PUBLIC_URL}/images/gallery/iphone.jpg`}
                      name="SMARTPHONE"
                   />
                </div>
@@ -83,7 +83,7 @@ function Home() {
                {/* Gallery item */}
                <div className="relative group overflow-hidden cursor-pointer">
                   <img
-                     src=" ../images/macPC.jpg"
+                     src={`${process.env.PUBLIC_URL}/images/macPC.jpg`}
                      alt="electronics"
                      className="w-full h-full group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
                   />
@@ -102,7 +102,7 @@ function Home() {
                {/* Gallery item */}
                <div className="relative group overflow-hidden cursor-pointer">
                   <img
-                     src=" ../images/galaxynote7.jpg"
+                     src={`${process.env.PUBLIC_URL}/images/galaxynote7.jpg`}
                      alt="electronics"
                      className="w-full h-full group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
                   />

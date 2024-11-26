@@ -166,21 +166,21 @@ function Shop() {
                >
                   <SwiperSlide>
                      <ShopSlide
-                        img="../images/shop/slide2.jpg"
+                        img={`${process.env.PUBLIC_URL}/images/shop/slide2.jpg`}
                         title="NEW TECHNOLOGY"
                         off="32%"
                      />
                   </SwiperSlide>
                   <SwiperSlide>
                      <ShopSlide
-                        img="../images/shop/slide1.jpg"
+                        img={`${process.env.PUBLIC_URL}/images/shop/slide1.jpg`}
                         title="NEW FASHION"
                         off="45%"
                      />
                   </SwiperSlide>
                   <SwiperSlide>
                      <ShopSlide
-                        img="../images/shop/slide3.jpg"
+                        img={`${process.env.PUBLIC_URL}/images/shop/slide3.jpg`}
                         title="JEWELRY-BRACELETS"
                         off="35%"
                      />

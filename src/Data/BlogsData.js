@@ -2,7 +2,7 @@ const BlogsData = [
    {
       id: 1,
       author: "7uptheme",
-      img: "../images/blogs/blog1.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog1.jpg`,
       subImg: "../images/blogs/blog5.jpg",
       comment: true,
       day: "29",
@@ -11,7 +11,7 @@ const BlogsData = [
    {
       id: 2,
       author: "8fromblog",
-      img: "../images/blogs/blog2.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog2.jpg`,
       subImg: "../images/blogs/blog10.jpg",
       comment: false,
       day: "18",
@@ -20,7 +20,7 @@ const BlogsData = [
    {
       id: 3,
       author: "7uptheme",
-      img: "../images/blogs/blog3.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog3.jpg`,
       subImg: "../images/blogs/blog4.jpg",
       comment: true,
       day: "5",
@@ -29,7 +29,7 @@ const BlogsData = [
    {
       id: 4,
       author: "8fromblog",
-      img: "../images/blogs/blog4.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog4.jpg`,
       subImg: "../images/blogs/blog2.jpg",
       comment: false,
       day: "8",
@@ -38,7 +38,7 @@ const BlogsData = [
    {
       id: 5,
       author: "7uptheme",
-      img: "../images/blogs/blog5.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog5.jpg`,
       subImg: "../images/blogs/blog6.jpg",
       comment: true,
       day: "20",
@@ -47,7 +47,7 @@ const BlogsData = [
    {
       id: 6,
       author: "8fromblog",
-      img: "../images/blogs/blog6.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog6.jpg`,
       subImg: "../images/blogs/blog5.jpg",
       comment: false,
       day: "10",
@@ -56,7 +56,7 @@ const BlogsData = [
    {
       id: 7,
       author: "7uptheme",
-      img: "../images/blogs/blog7.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog7.jpg`,
       subImg: "../images/blogs/blog8.jpg",
       comment: true,
       day: "15",
@@ -65,7 +65,7 @@ const BlogsData = [
    {
       id: 8,
       author: "8fromblog",
-      img: "../images/blogs/blog8.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog8.jpg`,
       subImg: "../images/blogs/blog7.jpg",
       comment: false,
       day: "25",
@@ -74,7 +74,7 @@ const BlogsData = [
    {
       id: 9,
       author: "7uptheme",
-      img: "../images/blogs/blog9.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog9.jpg`,
       subImg: "../images/blogs/blog1.jpg",
       comment: true,
       day: "30",
@@ -83,7 +83,7 @@ const BlogsData = [
    {
       id: 10,
       author: "8fromblog",
-      img: "../images/blogs/blog10.jpg",
+      img: `${process.env.PUBLIC_URL}/images/blogs/blog10.jpg`,
       subImg: "../images/blogs/blog2.jpg",
       comment: false,
       day: "3",

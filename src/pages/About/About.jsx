@@ -8,7 +8,7 @@ function About() {
          {/* header image */}
          <div className="w-full aspect-[auto] md:aspect-[2/1] lg:aspect-[2.6/1] pt-8">
             <img
-               src=" ../images/workinglaptop.jpg"
+               src={`${process.env.PUBLIC_URL}/images/workinglaptop.jpg`}
                alt="about-header"
                className="w-full h-full"
             />
@@ -83,7 +83,7 @@ function About() {
             </div>
             <div className="w-full md:w-[40%]">
                <img
-                  src=" ../images/user-guide.jpg"
+                  src={`${process.env.PUBLIC_URL}/images/user-guide.jpg`}
                   alt="user-guide"
                   className="w-full"
                />
@@ -99,19 +99,19 @@ function About() {
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                <ReviewBox
-                  img="/images/review/review-1.jpg"
+                  img={`${process.env.PUBLIC_URL}/images/review/review-1.jpg`}
                   name="Stenve Johnson"
                />
                <ReviewBox
-                  img="/images/review/review-2.jpg"
+                  img={`${process.env.PUBLIC_URL}/images/review/review-2.jpg`}
                   name="Charlie McGlynn"
                />
                <ReviewBox
-                  img="/images/review/review-3.jpg"
+                  img={`${process.env.PUBLIC_URL}/images/review/review-3.jpg`}
                   name="Madison Knight"
                />
                <ReviewBox
-                  img="/images/review/review-4.jpg"
+                  img={`${process.env.PUBLIC_URL}/images/review/review-4.jpg`}
                   name="Nikole Brakeson"
                />
             </div>

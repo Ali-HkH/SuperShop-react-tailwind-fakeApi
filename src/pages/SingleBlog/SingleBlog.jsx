@@ -34,7 +34,7 @@ function SingleBlog() {
             {/* blog article */}
             <div>
                {/* header */}
-               <img className="w-full" src={mainBlog.img} alt="Blog-img" />
+               <img className="w-full aspect-video" src={mainBlog.img} alt="Blog-img" />
                <div className="py-4 lg:pt-7 lg:pb-5 border-b border-gray-300 mb-4 lg:mb-5">
                   <h1 className="text-2xl lg:text-4xl font-bold pb-3 lg:pb-5">
                      Lorem Khaled Ipsum is a major key
@@ -97,7 +97,7 @@ function SingleBlog() {
                      <img
                         src={mainBlog.subImg}
                         alt="blog-subImg"
-                        className="w-full lg:w-1/2 lg:aspect-[1/1.2]"
+                        className="w-full lg:w-1/2 lg:aspect-square"
                      />
                      <div className="w-full lg:w-1/2">
                         <p className="mb-6">

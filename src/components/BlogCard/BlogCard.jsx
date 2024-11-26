@@ -5,11 +5,11 @@ function BlogCard({ id, img, author, day, date, comment }) {
    return (
       <div className="w-full flex flex-col lg:flex-row items-start gap-x-8 pb-9 mb-9 border-b border-gray-300">
          {/* image */}
-         <div className="relative w-full lg:w-1/2 overflow-hidden mb-3">
+         <div className="relative w-full lg:w-1/2 aspect-video overflow-hidden mb-3">
             <img
                src={img}
                alt="blog-img"
-               className="w-full hover:scale-110 transition-all duration-300"
+               className="w-full h-full hover:scale-110 transition-all duration-300"
             />
             <div className="absolute top-0 right-0">
                <div className="bg-indigo-600 text-white text-center w-24 h-16">

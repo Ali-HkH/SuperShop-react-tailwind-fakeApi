@@ -45,7 +45,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand1.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand1.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -54,7 +54,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand2.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand2.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -63,7 +63,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand3.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand3.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -72,7 +72,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand4.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand4.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -81,7 +81,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand1.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand1.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -90,7 +90,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand2.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand2.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -99,7 +99,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand5.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand5.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
@@ -108,7 +108,7 @@ function Brands() {
             <SwiperSlide>
                <div className="w-auto aspect-auto group overflow-hidden border cursor-pointer border-gray-300/60">
                   <img
-                     src=" ../images/brands/brand6.png"
+                     src={`${process.env.PUBLIC_URL}/images/brands/brand6.png`}
                      alt="brand"
                      className="w-full group-hover:scale-110 transition-all duration-300"
                   />
