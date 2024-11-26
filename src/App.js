@@ -1,22 +1,33 @@
+import { useEffect, useState } from "react";
 import routes from "./routes";
 import { useRoutes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Nav from "./components/Nav/Nav";
 import Superior from "./components/Superior/Superior";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 function App() {
+   const router = useRoutes(routes);
+   const [loading, setLoading] = useState(true);
 
-  const router = useRoutes(routes)
+   useEffect(() => {
+      setTimeout(() => setLoading(false), 2000);
+   }, []);
 
-
-  return (
-    <div className="App">
-      <Nav />
-      {router}
-      <Superior />
-      <Footer />
-    </div>
-  );
+   return (
+      <div className="App">
+         {loading ? (
+            <LoadingScreen />
+         ) : (
+            <>
+               <Nav />
+               {router}
+               <Superior />
+               <Footer />
+            </>
+         )}
+      </div>
+   );
 }
 
 export default App;

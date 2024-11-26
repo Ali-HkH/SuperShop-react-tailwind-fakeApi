@@ -168,7 +168,7 @@ function Nav() {
                   />
                </div>
                {/* category - searchBar */}
-               <div className="md:ml-8 flex items-center w-full md:w-[55%] 2xl:w-[60%]">
+               <div className="md:ml-8 flex items-center w-full md:w-[60%] 2xl:w-[65%]">
                   {/* category */}
                   <div
                      role="button"
@@ -205,7 +205,7 @@ function Nav() {
                   </div>
                   {/* searchBar */}
                   <input
-                     className="w-[90%] md:w-[55%] px-6 py-3 text-stone-600 appearance-none focus:outline-none border border-gray-300"
+                     className="w-[90%] md:w-[55%] xl:w-[65%] px-6 py-3 text-stone-600 appearance-none focus:outline-none border border-gray-300"
                      placeholder="I'm searching for ..."
                      type="text"
                   />
@@ -319,7 +319,7 @@ function Nav() {
                      </svg>
                      <Link to={"Cart"}>
                         <div className="px-4 border border-gray-300 py-[11px]">
-                           <span className="text-stone-600 md:hidden lg:inline-block">
+                           <span className="text-stone-600 md:hidden xl:inline-block">
                               {userCart.length} ITEM(S) -{" "}
                            </span>
                            <span className="text-indigo-700">${totalBuy}</span>

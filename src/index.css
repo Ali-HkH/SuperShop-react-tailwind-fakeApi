@@ -72,7 +72,6 @@ input[type="range"]:focus::-moz-range-thumb {
       background-image: url("/public/images/saleHero.jpg");
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: -150px;
       background-attachment: fixed;
    }
    .about-nav {
@@ -167,6 +166,18 @@ input[type="range"]:focus::-moz-range-thumb {
     .payment-card-rotate {
       animation: payment-rotate .5s linear;
     }
+    .circle-loading {
+      animation: circleRotate 1s linear infinite;
+   }
+
+   @keyframes circleRotate {
+      0% {
+         transform: rotate(0deg);
+      }
+      100% {
+         transform: rotate(360deg);
+      }
+   }
 
     @keyframes payment-rotate {
       from {
