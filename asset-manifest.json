@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/SuperShop-react-tailwind-fakeApi/static/css/main.ce1b2b10.css",
+    "main.js": "/SuperShop-react-tailwind-fakeApi/static/js/main.ba29da7a.js",
+    "static/media/saleHero.jpg": "/SuperShop-react-tailwind-fakeApi/static/media/saleHero.b3be1ddba817cba93ff0.jpg",
+    "index.html": "/SuperShop-react-tailwind-fakeApi/index.html",
+    "main.ce1b2b10.css.map": "/SuperShop-react-tailwind-fakeApi/static/css/main.ce1b2b10.css.map",
+    "main.ba29da7a.js.map": "/SuperShop-react-tailwind-fakeApi/static/js/main.ba29da7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce1b2b10.css",
+    "static/js/main.ba29da7a.js"
+  ]
+}
