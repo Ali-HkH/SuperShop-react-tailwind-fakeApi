@@ -1,6 +1,5 @@
 import Home from "./pages/Home/Home"
 import Blog from "./pages/Blog/Blog"
-import Cart from "./pages/Cart/Cart"
 import Contact from "./pages/Contact/Contact"
 import About from "./pages/About/About"
 import Login from "./pages/Login/Login"
@@ -15,7 +14,6 @@ const routes = [
     {path: "/SingleShop/:productID", element:<SingleShop /> },
     {path: "/Blog", element:<Blog /> },
     {path: "/Blog/:blogID", element:<SingleBlog /> },
-    {path: "/Cart", element:<Cart /> },
     {path: "/Contact", element:<Contact /> },
     {path: "/About", element:<About /> },
     {path: "/Login", element:<Login /> },
