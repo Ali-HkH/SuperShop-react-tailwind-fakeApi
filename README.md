@@ -9,4 +9,4 @@
 - Products sort in categories and can be filtered by price.
 - Multiple customized components.
 ************************
-Design inspired from supershop template in [themeForest](https://themeforest.net/) but I see it as a challenge and develped it with my own knowlage.
+Design inspired from supershop template in [themeForest](https://themeforest.net/) but I see it as a challenge and develped it with my own knowledge.
