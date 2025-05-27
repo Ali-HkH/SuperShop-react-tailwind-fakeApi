@@ -11,62 +11,65 @@
    }
 
    /********** Range Input Styles **********/
-/*Range Reset*/
-input[type="range"] {
-   -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 15rem;
-}
-/* Removes default focus */
-input[type="range"]:focus {
-  outline: none;
-}
+   /*Range Reset*/
+   input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+      width: 15rem;
+   }
+   /* Removes default focus */
+   input[type="range"]:focus {
+      outline: none;
+   }
 
-/***** Chrome, Safari, Opera and Edge Chromium styles *****/
-/* slider track */
-input[type="range"]::-webkit-slider-runnable-track {
-   background-color: #4338ca;
-   border-radius: 0.4rem;
-   height: 0.4rem;  
-}
-/* slider thumb */
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-   appearance: none;
-   margin-top: -6px; /* Centers thumb on the track */
-   background-color: #818cf8;
-   height: 1.2rem;
-   width: 1rem;
-}
-input[type="range"]:focus::-webkit-slider-thumb {   
-  border: none;
-  outline: none;
-}
-/******** Firefox styles ********/
-/* slider track */
-input[type="range"]::-moz-range-track {
-   background-color: #4338ca;
-   border-radius: 0.4rem;
-   height: 0.4rem;
-}
-/* slider thumb */
-input[type="range"]::-moz-range-thumb {
-   border: none;
-   border-radius: 0; 
-   background-color: #818cf8;
-   height: 1.2rem;
-   width: 1rem;
-}
-input[type="range"]:focus::-moz-range-thumb {
-  border: none;
-  outline: none;
-}
+   /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+   /* slider track */
+   input[type="range"]::-webkit-slider-runnable-track {
+      background-color: #4338ca;
+      border-radius: 0.4rem;
+      height: 0.4rem;
+   }
+   /* slider thumb */
+   input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -6px; /* Centers thumb on the track */
+      background-color: #818cf8;
+      height: 1.2rem;
+      width: 1rem;
+   }
+   input[type="range"]:focus::-webkit-slider-thumb {
+      border: none;
+      outline: none;
+   }
+   /******** Firefox styles ********/
+   /* slider track */
+   input[type="range"]::-moz-range-track {
+      background-color: #4338ca;
+      border-radius: 0.4rem;
+      height: 0.4rem;
+   }
+   /* slider thumb */
+   input[type="range"]::-moz-range-thumb {
+      border: none;
+      border-radius: 0;
+      background-color: #818cf8;
+      height: 1.2rem;
+      width: 1rem;
+   }
+   input[type="range"]:focus::-moz-range-thumb {
+      border: none;
+      outline: none;
+   }
 }
 @layer components {
    .container {
-      @apply max-w-[95%] px-5 2xl:max-w-[90%]  2xl:px-24;
+      @apply px-5 2xl:px-24;
+   }
+   .container-fluid {
+      @apply w-full mx-auto;
    }
    .sale-hero {
       background-image: url("/public/images/saleHero.jpg");
@@ -91,13 +94,13 @@ input[type="range"]:focus::-moz-range-thumb {
       position: relative;
       margin: 0 auto;
       width: 100px;
-    }
-    .loader:before {
+   }
+   .loader:before {
       content: "";
       display: block;
       padding-top: 100%;
-    }
-    .circular {
+   }
+   .circular {
       -webkit-animation: rotate 2s linear infinite;
       animation: rotate 2s linear infinite;
       height: 44px;
@@ -110,63 +113,63 @@ input[type="range"]:focus::-moz-range-thumb {
       left: 0;
       right: 0;
       margin: auto;
-    }
-    .path {
+   }
+   .path {
       stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;
       -webkit-animation: dash 1.5s ease-in-out infinite,
-        color 6s ease-in-out infinite;
+         color 6s ease-in-out infinite;
       animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
       stroke-linecap: round;
-    }
+   }
 
-    /* Loader Spinner Animations */
-    @-webkit-keyframes rotate {
+   /* Loader Spinner Animations */
+   @-webkit-keyframes rotate {
       100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+         -webkit-transform: rotate(360deg);
+         transform: rotate(360deg);
       }
-    }
-    @keyframes rotate {
+   }
+   @keyframes rotate {
       100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+         -webkit-transform: rotate(360deg);
+         transform: rotate(360deg);
       }
-    }
-    @-webkit-keyframes dash {
+   }
+   @-webkit-keyframes dash {
       0% {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
+         stroke-dasharray: 1, 200;
+         stroke-dashoffset: 0;
       }
       50% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35px;
+         stroke-dasharray: 89, 200;
+         stroke-dashoffset: -35px;
       }
       100% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -124px;
+         stroke-dasharray: 89, 200;
+         stroke-dashoffset: -124px;
       }
-    }
-    @keyframes dash {
+   }
+   @keyframes dash {
       0% {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
+         stroke-dasharray: 1, 200;
+         stroke-dashoffset: 0;
       }
       50% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35px;
+         stroke-dasharray: 89, 200;
+         stroke-dashoffset: -35px;
       }
       100% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -124px;
+         stroke-dasharray: 89, 200;
+         stroke-dashoffset: -124px;
       }
-    }
+   }
 
-    /* payment card animation */
-    .payment-card-rotate {
-      animation: payment-rotate .5s linear;
-    }
-    .circle-loading {
+   /* payment card animation */
+   .payment-card-rotate {
+      animation: payment-rotate 0.5s linear;
+   }
+   .circle-loading {
       animation: circleRotate 1s linear infinite;
    }
 
@@ -179,14 +182,14 @@ input[type="range"]:focus::-moz-range-thumb {
       }
    }
 
-    @keyframes payment-rotate {
+   @keyframes payment-rotate {
       from {
-        transform: rotateY(0deg);
+         transform: rotateY(0deg);
       }
       to {
-        transform: rotateY(360deg);
+         transform: rotateY(360deg);
       }
-    }
+   }
 }
 @layer utilities {
 }

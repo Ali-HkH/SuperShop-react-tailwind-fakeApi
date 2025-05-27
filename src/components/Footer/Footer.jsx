@@ -84,26 +84,26 @@ function Footer() {
             </div>
          </div>
          {/* footer bottom */}
-         <div className="py-8 bg-indigo-700 text-white">
+         <div className="container-fluid py-8 bg-indigo-700 text-white">
             <div className="container w-full flex flex-col gap-y-4 items-start md:items-center md:flex-row md:justify-between">
                <div className="flex flex-col gap-y-4 lg:flex-row  lg:items-baseline">
                   <span className="mr-12 font-medium">
-                     Design by: ©2017 SUPERSHOP
+                     Design: ©SUPERSHOP
                   </span>
                   {/* policy */}
                   <div className="flex">
                      <span className="font-medium">Policies:</span>
-                     <ul className="flex items-center last:child:border-none child:cursor-pointer">
-                        <li className="px-3 border-r-2 border-r-white hover:text-amber-300 transition-colors">
-                           Terms of use
+                     <ul className="flex items-center flex-wrap child:cursor-pointer">
+                        <li className="px-1 hover:text-amber-300 transition-colors">
+                           Terms of use |
                         </li>
-                        <li className="px-3 border-r-2 border-r-white hover:text-amber-300 transition-colors">
-                           Security
+                        <li className="px-1 hover:text-amber-300 transition-colors">
+                           Security |
                         </li>
-                        <li className="px-3 border-r-2 border-r-white hover:text-amber-300 transition-colors">
-                           Privacy
+                        <li className="px-1  hover:text-amber-300 transition-colors">
+                           Privacy |
                         </li>
-                        <li className="px-3 border-r-2 border-r-white hover:text-amber-300 transition-colors">
+                        <li className="px-1 hover:text-amber-300 transition-colors">
                            infringement
                         </li>
                      </ul>
@@ -112,7 +112,7 @@ function Footer() {
                {/* payment */}
                <div className="flex md:flex-col xl:flex-row gap-y-4 gap-x-6">
                   <span>PAYMENT METHODS :</span>
-                  <ul className="flex gap-x-3">
+                  <ul className="flex flex-wrap gap-x-3">
                      <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/master-card.jpg`} />
                      <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/paypal.jpg`} />
                      <PaymentCard img={`${process.env.PUBLIC_URL}/images/payment/skrill.jpg`} />

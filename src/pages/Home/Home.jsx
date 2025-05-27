@@ -8,7 +8,7 @@ function Home() {
    return (
       <div>
          {/* Header-Hero-Parallex */}
-         <div className="sale-hero relative w-full h-[80vh] lg:h-[90vh] 2xl:h-[110vh] flex items-center justify-center mb-[400px] md:mb-[140px] lg:mb-[95px]">
+         <div className="container-fluid sale-hero relative w-full h-[80vh] lg:h-[90vh] 2xl:h-[110vh] flex items-center justify-center mb-[400px] md:mb-[140px] lg:mb-[95px]">
             {/* saleBox */}
             <div className="text-center font-bold bg-black bg-opacity-15 backdrop-blur-sm py-10 px-14 sm:py-12 sm:px-20 lg:py-16 lg:px-28">
                <h1 className="text-4xl sm:text-5xl lg:text-[100px]/[120px] text-white">

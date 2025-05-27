@@ -7,7 +7,7 @@ import { Pagination } from "swiper/modules";
 
 function Superior() {
    return (
-      <div className="bg-indigo-700 py-2">
+      <div className="container-fluid bg-indigo-700 py-2">
          <div className="container">
             <Swiper
                breakpoints={{

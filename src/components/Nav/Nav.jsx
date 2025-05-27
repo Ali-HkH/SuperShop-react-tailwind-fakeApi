@@ -354,7 +354,7 @@ function Nav() {
             </div>
          </div>
          {/* bottom desktop nav menu */}
-         <div className="hidden md:block bg-indigo-700 text-white h-[48px] w-full ">
+         <div className="container-fluid hidden md:block bg-indigo-700 text-white h-[48px] w-full ">
             <div className="container flex items-center lg:justify-between">
                {/* menu */}
                <ul className="flex items-center child:cursor-pointer child:px-5 child:py-3 child:transition-colors child:font-medium">
