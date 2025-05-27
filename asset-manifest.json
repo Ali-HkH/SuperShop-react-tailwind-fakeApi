@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SuperShop-react-tailwind-fakeApi/static/css/main.0aa95d22.css",
-    "main.js": "/SuperShop-react-tailwind-fakeApi/static/js/main.481e9f98.js",
+    "main.css": "/SuperShop-react-tailwind-fakeApi/static/css/main.484c03f9.css",
+    "main.js": "/SuperShop-react-tailwind-fakeApi/static/js/main.a6d40391.js",
     "static/media/saleHero.jpg": "/SuperShop-react-tailwind-fakeApi/static/media/saleHero.b3be1ddba817cba93ff0.jpg",
     "index.html": "/SuperShop-react-tailwind-fakeApi/index.html",
-    "main.0aa95d22.css.map": "/SuperShop-react-tailwind-fakeApi/static/css/main.0aa95d22.css.map",
-    "main.481e9f98.js.map": "/SuperShop-react-tailwind-fakeApi/static/js/main.481e9f98.js.map"
+    "main.484c03f9.css.map": "/SuperShop-react-tailwind-fakeApi/static/css/main.484c03f9.css.map",
+    "main.a6d40391.js.map": "/SuperShop-react-tailwind-fakeApi/static/js/main.a6d40391.js.map"
   },
   "entrypoints": [
-    "static/css/main.0aa95d22.css",
-    "static/js/main.481e9f98.js"
+    "static/css/main.484c03f9.css",
+    "static/js/main.a6d40391.js"
   ]
 }
