@@ -1,10 +1,9 @@
-import React from "react";
 import CategoryBox from "../../components/CategoryBox/CategoryBox";
-import BlogBox from "../../components/BlogBox/BlogBox";
+import BlogBox from "../../components/Blog/BlogBox/BlogBox";
 import FAQBox from "../../components/FAQBox/FAQBox";
 import AdBox from "../../components/AdBox/AdBox";
 import BlogsData from "../../Data/BlogsData";
-import BlogCard from "../../components/BlogCard/BlogCard";
+import BlogCard from "../../components/Blog/BlogCard/BlogCard";
 
 function Blog() {
    return (
@@ -21,12 +20,7 @@ function Blog() {
             {BlogsData.map((blog) => (
                <BlogCard
                   key={blog.id}
-                  id={blog.id}
-                  img={blog.img}
-                  author={blog.author}
-                  day={blog.day}
-                  date={blog.date}
-                  comment={blog.comment}
+                  {...blog}
                />
             ))}
          </div>

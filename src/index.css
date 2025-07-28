@@ -166,9 +166,6 @@
    }
 
    /* payment card animation */
-   .payment-card-rotate {
-      animation: payment-rotate 0.5s linear;
-   }
    .circle-loading {
       animation: circleRotate 1s linear infinite;
    }
@@ -182,14 +179,6 @@
       }
    }
 
-   @keyframes payment-rotate {
-      from {
-         transform: rotateY(0deg);
-      }
-      to {
-         transform: rotateY(360deg);
-      }
-   }
 }
 @layer utilities {
 }

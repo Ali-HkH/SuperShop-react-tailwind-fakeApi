@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -23,10 +23,6 @@ function Register() {
          setIsUserLoggedIn(false);
       }
    };
-
-   useEffect(() => {
-      checkLogin();
-   }, []);
 
    async function registerUser() {
       const newUser = {
@@ -61,11 +57,7 @@ function Register() {
       });
       if (result.isConfirmed) {
          try {
-            const response = await axios.post(
-               "https://fakestoreapi.com/users",
-               newUser
-            );
-            console.log(response);
+            await axios.post("https://fakestoreapi.com/users", newUser);
             Swal.fire({
                position: "bottom-end",
                title: "Done!",
@@ -83,126 +75,114 @@ function Register() {
       }
    }
 
+   useEffect(() => {
+      checkLogin();
+   }, []);
+
    return (
       <>
          {isUserLoggedIn ? (
-            <div className="w-[full] bg-gradient-to-r from-indigo-400 to-indigo-700">
-               <div className="pt-20 container h-[100vh] flex items-start justify-center">
-                  <div className="w-full md:w-[65%] lg:w-[85%] xl:w-[70%] shadow-lg p-8 pt-16 rounded-xl bg-indigo-100 text-stone-600">
-                     <h1 className="w-full text-center font-bold text-2xl lg:text-4xl text-indigo-500 mb-12">
-                        You have Already Registered :) !
-                     </h1>
-                  </div>
-               </div>
-            </div>
+            navigate("/Login")
          ) : (
-            <div className="w-[full] bg-gradient-to-r from-indigo-400 to-indigo-700">
-               <div className="container h-[100vh] flex items-center justify-start">
-                  <div className="w-full md:w-[65%] lg:w-[85%] xl:w-[70%] shadow-lg p-8 pt-16 rounded-xl bg-indigo-100 text-stone-600">
-                     <h1 className="w-full text-center font-bold text-3xl text-indigo-500 mb-12">
+            <div className="container w-[full] flex items-center justify-center py-12">
+               <div className="w-full md:w-[65%] lg:w-[85%] xl:w-[70%] shadow-lg p-8 pt-16 rounded-sm bg-indigo-200 text-stone-600">
+                  <h1 className="w-full text-center font-bold text-3xl text-indigo-500 mb-12">
+                     Register
+                  </h1>
+                  {/* inputs layout */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+                     {/* name input */}
+                     <div className="relative">
+                        <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
+                           <use href="#user-info"></use>
+                        </svg>
+                        <input
+                           type="text"
+                           className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-200 py-2 pl-7"
+                           placeholder="Name"
+                           value={name}
+                           onChange={(event) => setName(event.target.value)}
+                        />
+                     </div>
+                     {/* lastname input */}
+                     <div className="relative">
+                        <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
+                           <use href="#user-info"></use>
+                        </svg>
+                        <input
+                           type="text"
+                           className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-200 py-2 pl-7"
+                           placeholder="Lastname"
+                           value={lastName}
+                           onChange={(event) => setLastName(event.target.value)}
+                        />
+                     </div>
+                     {/* username input */}
+                     <div className="relative">
+                        <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
+                           <use href="#user"></use>
+                        </svg>
+                        <input
+                           type="text"
+                           className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-200 py-2 pl-7"
+                           placeholder="Username"
+                           value={username}
+                           onChange={(event) => setUsername(event.target.value)}
+                        />
+                     </div>
+                     {/* password input */}
+                     <div className="relative">
+                        <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
+                           <use href="#lock"></use>
+                        </svg>
+                        <input
+                           type="text"
+                           className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-200 py-2 pl-7"
+                           placeholder="Password"
+                           value={password}
+                           onChange={(event) => setPassword(event.target.value)}
+                        />
+                     </div>
+                     {/* email input */}
+                     <div className="relative">
+                        <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
+                           <use href="#envelope"></use>
+                        </svg>
+                        <input
+                           type="text"
+                           className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-200 py-2 pl-7"
+                           placeholder="Email"
+                           value={email}
+                           onChange={(event) => setEmail(event.target.value)}
+                        />
+                     </div>
+                     {/* phone input */}
+                     <div className="relative">
+                        <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
+                           <use href="#phone"></use>
+                        </svg>
+                        <input
+                           type="text"
+                           className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-200 py-2 pl-7"
+                           placeholder="Phone"
+                           value={phone}
+                           onChange={(event) => setPhone(event.target.value)}
+                        />
+                     </div>
+                  </div>
+                  {/* buttons */}
+                  <div className="w-full flex items-center justify-between">
+                     <button
+                        onClick={registerUser}
+                        className="text-center px-10 py-2.5 bg-indigo-500 hover:bg-indigo-700 text-white font-medium rounded-md transition-colors"
+                     >
                         Register
-                     </h1>
-                     {/* inputs layout */}
-                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-                        {/* name input */}
-                        <div className="relative">
-                           <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
-                              <use href="#user-info"></use>
-                           </svg>
-                           <input
-                              type="text"
-                              className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-100 py-2 pl-7"
-                              placeholder="Name"
-                              value={name}
-                              onChange={(event) => setName(event.target.value)}
-                           />
-                        </div>
-                        {/* lastname input */}
-                        <div className="relative">
-                           <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
-                              <use href="#user-info"></use>
-                           </svg>
-                           <input
-                              type="text"
-                              className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-100 py-2 pl-7"
-                              placeholder="Lastname"
-                              value={lastName}
-                              onChange={(event) =>
-                                 setLastName(event.target.value)
-                              }
-                           />
-                        </div>
-                        {/* username input */}
-                        <div className="relative">
-                           <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
-                              <use href="#user"></use>
-                           </svg>
-                           <input
-                              type="text"
-                              className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-100 py-2 pl-7"
-                              placeholder="Username"
-                              value={username}
-                              onChange={(event) =>
-                                 setUsername(event.target.value)
-                              }
-                           />
-                        </div>
-                        {/* password input */}
-                        <div className="relative">
-                           <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
-                              <use href="#lock"></use>
-                           </svg>
-                           <input
-                              type="text"
-                              className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-100 py-2 pl-7"
-                              placeholder="Password"
-                              value={password}
-                              onChange={(event) =>
-                                 setPassword(event.target.value)
-                              }
-                           />
-                        </div>
-                        {/* email input */}
-                        <div className="relative">
-                           <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
-                              <use href="#envelope"></use>
-                           </svg>
-                           <input
-                              type="text"
-                              className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-100 py-2 pl-7"
-                              placeholder="Email"
-                              value={email}
-                              onChange={(event) => setEmail(event.target.value)}
-                           />
-                        </div>
-                        {/* phone input */}
-                        <div className="relative">
-                           <svg className="size-6 text-indigo-500 absolute -left-1 top-2">
-                              <use href="#phone"></use>
-                           </svg>
-                           <input
-                              type="text"
-                              className="border-b-2 border-gray-300 focus:outline-none hover:border-indigo-500 focus:border-indigo-500 font-medium bg-indigo-100 py-2 pl-7"
-                              placeholder="Phone"
-                              value={phone}
-                              onChange={(event) => setPhone(event.target.value)}
-                           />
-                        </div>
-                     </div>
-                     {/* buttons */}
-                     <div className="w-full flex items-center justify-between">
-                        <button
-                           onClick={registerUser}
-                           className="text-center px-10 py-2.5 bg-indigo-500 hover:bg-indigo-700 text-white font-medium rounded-3xl transition-colors"
-                        >
-                           Register
+                     </button>
+                     <Link to={`/Login`}>
+                        <button className="px-4 py-2.5 bg-white rounded-md font-medium hover:text-indigo-500 transition-colors">
+                           Already Registered?
                         </button>
-                        <Link to={`/Login`}>
-                           <button className="px-4 py-2.5 bg-white rounded-3xl font-medium hover:text-indigo-500 transition-colors">
-                              Already Registered?
-                           </button>
-                        </Link>
-                     </div>
+                     </Link>
                   </div>
                </div>
             </div>

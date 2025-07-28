@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function FAQBox() {
    const [accordionNum, setAccordionNum] = useState(null);

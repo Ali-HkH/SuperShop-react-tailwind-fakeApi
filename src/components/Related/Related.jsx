@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import RelatedBox from "../RelatedBox/RelatedBox";
-import ProductBox from "../ProductBox/ProductBox"
+import RelatedBox from "./RelatedBox/RelatedBox";
+import ProductBox from "../Shop/ProductBox/ProductBox"
 
 function Related({ related, isShop }) {
    const swiperRef = useRef();

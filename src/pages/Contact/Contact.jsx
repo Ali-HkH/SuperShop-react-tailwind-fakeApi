@@ -1,6 +1,5 @@
-import React from "react";
-import AdvantageBox from "../../components/AdvantageBox/AdvantageBox";
-import MessageForm from "../../components/MessageForm/MessageForm";
+import AdvantageBox from "../../components/About/AdvantageBox/AdvantageBox";
+import MessageForm from "../../components/SingleBlog/MessageForm/MessageForm";
 
 function Contact() {
    return (

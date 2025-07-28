@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import AdSlide from "../AdSlide/AdSlide";
+import AdSlide from "./AdSlide/AdSlide";
 
 function AdBox() {
    return (

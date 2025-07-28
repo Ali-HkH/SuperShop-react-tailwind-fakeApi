@@ -1,8 +1,14 @@
-import React from "react";
-import AdvantageBox from "../../components/AdvantageBox/AdvantageBox";
-import ReviewBox from "../../components/ReviewBox/ReviewBox";
+import { useRef } from "react";
+import AdvantageBox from "../../components/About/AdvantageBox/AdvantageBox";
+import ReviewBox from "../../components/About/ReviewBox/ReviewBox";
+import AboutNav from "../../components/About/AboutNav/AboutNav";
 
 function About() {
+   const introSection = useRef(null);
+   const protectSection = useRef(null);
+   const reviewsSection = useRef(null);
+
+
    return (
       <div className="container">
          {/* header image */}
@@ -13,21 +19,15 @@ function About() {
                className="w-full h-full"
             />
             {/* nav */}
-            <div className="flex gap-x-8 py-3">
-               <a href="#intro" className="about-nav">
-                  Introduction
-               </a>
-               <a href="#protect" className="about-nav">
-                  Protection
-               </a>
-               <a href="#reviews" className="about-nav">
-                  Customer Reviews
-               </a>
-            </div>
+            <AboutNav
+               introSection={introSection}
+               protectSection={protectSection}
+               reviewsSection={reviewsSection}
+            />
          </div>
          {/* introduction */}
          <div
-            id="intro"
+            ref={introSection}
             className="py-[40px] md:py-[70px] bg-stone-50 border border-gray-300/35  text-center"
          >
             <div className="flex justify-center items-center flex-col md:flex-row md:gap-x-16">
@@ -46,7 +46,7 @@ function About() {
          </div>
          {/* protection */}
          <div
-            id="protect"
+            ref={protectSection}
             className="mt-20 w-full flex flex-col items-start md:items-center md:flex-row md:justify-between"
          >
             <div className="w-full md:w-[50%]">
@@ -91,7 +91,7 @@ function About() {
          </div>
          {/* reviews */}
          <div
-            id="reviews"
+            ref={reviewsSection}
             className="mt-20 mb-12 pt-20 pb-10 border-t-2 border-t-gray-300/50"
          >
             <h1 className="mb-9 text-[22px] md:text-lg lg:text-[22px] font-bold  ">
